@@ -1,0 +1,197 @@
+<!--
+ Copyright 2020 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+{{ define "product" }}
+{{ template "header" . }}
+<div {{ with $.platform_css }} class="{{.}}" {{ end }}>
+  <span class="platform-flag">
+    {{$.platform_name}}
+  </span>
+</div>
+
+<main role="main">
+  <div class="h-product container">
+    <div class="row">
+      <div class="col-md-6">
+        <img class="product-image" alt="" src="{{ $.baseUrl }}{{$.product.Item.Picture}}" />
+      </div>
+      <div class="product-info col-md-5">
+        <div class="product-wrapper">
+
+          <h2>{{ $.product.Item.Name }}</h2>
+          <p class="product-price">{{ renderMoney $.product.Price }}</p>
+          <p>{{ $.product.Item.Description }}</p>
+
+          {{ if $.packagingInfo }}
+          <div class="product-packaging">
+            <h3>Packaging</h3>
+            <span>
+              Weight: {{ if $.packagingInfo.Weight }}{{ $.packagingInfo.Weight }}lb{{ else }}n/a{{ end }}
+            </span>
+            <span>
+              Width: {{ if $.packagingInfo.Width }}{{ $.packagingInfo.Width }}cm{{ else }}n/a{{ end }}
+            </span>
+            <span>
+              Height: {{ if $.packagingInfo.Height }}{{ $.packagingInfo.Height }}cm{{ else }}n/a{{ end }}
+            </span>
+            <span>
+              Depth: {{ if $.packagingInfo.Depth }}{{ $.packagingInfo.Depth }}cm{{ else }}n/a{{ end }}
+            </span>
+          </div>
+          {{ end }}
+
+          <form method="POST" action="{{ $.baseUrl }}/cart">
+            <input type="hidden" name="product_id" value="{{$.product.Item.Id}}" />
+            <div class="product-quantity-dropdown">
+              <select name="quantity" id="quantity">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>10</option>
+              </select>
+              <img src="{{ $.baseUrl }}/static/icons/Hipster_DownArrow.svg" alt="">
+            </div>
+            <button type="submit" class="cymbal-button-primary">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    {{ if $.recommendations}}
+      {{ template "recommendations" $ }}
+    {{ end }}
+  </div>
+
+  <!-- Reviews Section -->
+  <div class="container reviews-section">
+    <h3 class="reviews-title">Customer Reviews
+      {{ if $.review_stats }}
+      <span class="review-stats-badge">
+        <span class="stars">{{ starRating $.review_stats.AverageRating }}</span>
+        <span class="avg-rating">{{ printf "%.1f" $.review_stats.AverageRating }}</span>
+        <span class="review-count">({{ $.review_stats.TotalReviews }})</span>
+      </span>
+      {{ end }}
+    </h3>
+
+    {{ if $.reviews }}
+    <div class="reviews-list">
+      {{ range $.reviews }}
+      <div class="review-card">
+        <div class="review-header">
+          <span class="review-rating">{{ starRating .Rating }}</span>
+          <span class="review-title">{{ .Title }}</span>
+        </div>
+        <div class="review-meta">
+          <span class="review-author">{{ .UserName }}</span>
+          <span class="review-date">{{ .CreatedAt.Format "Jan 2, 2006" }}</span>
+        </div>
+        <p class="review-content">{{ .Content }}</p>
+      </div>
+      {{ end }}
+    </div>
+    {{ else }}
+    <p class="no-reviews">No reviews yet. Be the first to review this product!</p>
+    {{ end }}
+
+    <!-- Submit Review Form -->
+    <div class="review-form-container">
+      <h4>Write a Review</h4>
+      <form id="reviewForm" onsubmit="submitReview(event, '{{ $.product.Item.Id }}')">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="user_name">Your Name</label>
+            <input type="text" class="form-control" id="user_name" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="rating">Rating</label>
+            <select class="form-control" id="rating" required>
+              <option value="">Select rating</option>
+              <option value="5">★★★★★ (5)</option>
+              <option value="4">★★★★☆ (4)</option>
+              <option value="3">★★★☆☆ (3)</option>
+              <option value="2">★★☆☆☆ (2)</option>
+              <option value="1">★☆☆☆☆ (1)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="title">Review Title</label>
+          <input type="text" class="form-control" id="title" required>
+        </div>
+        <div class="form-group">
+          <label for="content">Your Review</label>
+          <textarea class="form-control" id="content" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="cymbal-button-primary">Submit Review</button>
+      </form>
+      <div id="reviewSuccess" class="alert alert-success" style="display:none; margin-top: 12px;">
+        Review submitted successfully!
+      </div>
+      <div id="reviewError" class="alert alert-danger" style="display:none; margin-top: 12px;">
+        Failed to submit review. Please try again.
+      </div>
+    </div>
+  </div>
+
+  <script>
+  function submitReview(event, productId) {
+    event.preventDefault();
+    const form = document.getElementById('reviewForm');
+    const successEl = document.getElementById('reviewSuccess');
+    const errorEl = document.getElementById('reviewError');
+    successEl.style.display = 'none';
+    errorEl.style.display = 'none';
+
+    const payload = {
+      product_id: productId,
+      user_name: document.getElementById('user_name').value,
+      rating: parseInt(document.getElementById('rating').value),
+      title: document.getElementById('title').value,
+      content: document.getElementById('content').value
+    };
+
+    fetch('{{ $.baseUrl }}/reviews', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(res => {
+      if (res.ok) {
+        successEl.style.display = 'block';
+        form.reset();
+        // Reload the page after 1.5s to show the new review
+        setTimeout(() => location.reload(), 1500);
+      } else {
+        errorEl.style.display = 'block';
+      }
+    })
+    .catch(() => {
+      errorEl.style.display = 'block';
+    });
+  }
+  </script>
+
+  <div class="ad">
+   {{ if $.ad }}{{ template "text_ad" $ }}{{ end }}
+  </div>
+
+</main>
+{{ template "footer" . }}
+{{ end }}
