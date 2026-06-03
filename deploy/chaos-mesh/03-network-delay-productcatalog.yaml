@@ -1,0 +1,17 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: delay-productcatalog
+  namespace: chaos-testing
+spec:
+  action: delay
+  mode: all
+  duration: 30s
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      app: productcatalogservice
+  delay:
+    latency: "500ms"
+    jitter: "100ms"

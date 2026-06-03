@@ -1,0 +1,19 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: combined-checkoutservice
+  namespace: chaos-testing
+spec:
+  action: delay
+  mode: all
+  duration: 30s
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      app: checkoutservice
+  delay:
+    latency: "200ms"
+    jitter: "50ms"
+  loss:
+    loss: "5%"

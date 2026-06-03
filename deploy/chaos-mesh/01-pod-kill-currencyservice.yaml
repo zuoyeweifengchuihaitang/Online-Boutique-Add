@@ -1,0 +1,14 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: kill-currencyservice
+  namespace: chaos-testing
+spec:
+  action: pod-kill
+  mode: all
+  duration: 30s
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      app: currencyservice

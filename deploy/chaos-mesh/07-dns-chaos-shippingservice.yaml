@@ -1,0 +1,16 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: DNSChaos
+metadata:
+  name: dns-failure-shippingservice
+  namespace: chaos-testing
+spec:
+  action: error
+  mode: all
+  duration: 30s
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      app: shippingservice
+  patterns:
+    - "*.default.svc.cluster.local"
