@@ -19,13 +19,11 @@
 kubectl port-forward -n monitoring svc/prometheus 9090:9090
 # 访问: http://localhost:9090
 ```
-
 ### 第2步：在终端2启动 Grafana 访问（可选）
 ```bash
 kubectl port-forward -n monitoring svc/grafana 3000:80
 # 访问: http://localhost:3000 (admin/admin)
 ```
-
 ### 第3步：在终端3启动监控 Agent
 ```bash
 cd ./release/agent

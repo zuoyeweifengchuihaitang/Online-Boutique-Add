@@ -20,6 +20,7 @@ import requests
 import json
 import subprocess
 import sys
+import time
 from typing import Dict, List, Tuple, Optional
 from datetime import datetime
 from dataclasses import dataclass
@@ -53,13 +54,14 @@ class OnlineBoutiqueMonitor:
     }
     
     # 严重程度阈值
-    CPU_WARNING = 0.50
+    CPU_WARNING = 0.15
     CPU_CRITICAL = 0.80
     MEMORY_WARNING = 2 * 1024  # 2GB in MB
     MEMORY_CRITICAL = 4 * 1024  # 4GB in MB
     ERROR_RATE_WARNING = 0.005  # 0.5%
     ERROR_RATE_CRITICAL = 0.01  # 1%
-    POD_RESTART_WARNING = 3
+    POD_RESTART_WARNING = 15
+    RECOVERY_COOLDOWN = 60  # 同一服务最短恢复间隔（秒）
     
     def __init__(self, prometheus_url: str = "http://localhost:9090"):
         """
@@ -70,6 +72,7 @@ class OnlineBoutiqueMonitor:
         """
         self.prometheus_url = prometheus_url
         self.iteration = 0
+        self._last_recovery = {}  # {service_name: timestamp}
         
     def query_prometheus(self, query: str) -> Tuple[str, List[Dict[str, str]]]:
         """
@@ -141,31 +144,35 @@ class OnlineBoutiqueMonitor:
         
         return pod_status
     
-    def _generate_diagnosis(self, service: str, metrics: Dict, pod_info: Optional[Dict]) -> Tuple[str, str]:
+    def _generate_diagnosis(self, service: str, metrics: Dict, pod_status: Dict[str, Dict]) -> Tuple[str, str]:
         """
         生成诊断结论和建议
         
         Args:
             service: 服务名称
             metrics: 指标数据
-            pod_info: Pod 状态信息
+            pod_status: 所有 Pod 状态字典 {service_name: {status_info}}
             
         Returns:
             (severity, diagnosis) - 严重程度和诊断信息
         """
         issues = []
+        has_pod_issue = False
         
-        # 检查 Pod 状态
-        if pod_info:
-            if pod_info['phase'] != 'Running':
-                issues.append(f"Pod 状态异常: {pod_info['phase']}")
+        # 检查所有 Pod 状态
+        for svc, info in pod_status.items():
+            if info['phase'] != 'Running':
+                issues.append(f"{svc} Pod 状态异常: {info['phase']}")
+                has_pod_issue = True
             
-            ready_parts = pod_info['ready'].split('/')
+            ready_parts = info['ready'].split('/')
             if ready_parts[0] != ready_parts[1]:
-                issues.append(f"Pod 不就绪 (Ready={pod_info['ready']})")
+                issues.append(f"{svc} Pod 不就绪 (Ready={info['ready']})")
+                has_pod_issue = True
             
-            if pod_info['restarts'] > self.POD_RESTART_WARNING:
-                issues.append(f"容器频繁重启 (重启次数={pod_info['restarts']})")
+            if info['restarts'] > self.POD_RESTART_WARNING:
+                issues.append(f"{svc} 容器频繁重启 (重启次数={info['restarts']})")
+                has_pod_issue = True
         
         # 检查 CPU
         cpu = metrics.get('cpu', 0)
@@ -198,7 +205,13 @@ class OnlineBoutiqueMonitor:
         # 判断严重程度
         if not issues:
             return 'HEALTHY', "✅ 系统运行正常"
-        elif len(issues) == 1 and (cpu <= self.CPU_WARNING and memory <= self.MEMORY_WARNING):
+        
+        # Pod 级别问题直接判为 CRITICAL
+        if has_pod_issue:
+            return 'CRITICAL', "✗ " + " | ".join(issues)
+        
+        # 纯指标问题：单个轻度指标（未达 CRITICAL 阈值）-> WARNING，否则 CRITICAL
+        if len(issues) == 1 and (cpu < self.CPU_CRITICAL and memory < self.MEMORY_CRITICAL):
             return 'WARNING', "⚠ " + " | ".join(issues)
         else:
             return 'CRITICAL', "✗ " + " | ".join(issues)
@@ -221,12 +234,12 @@ class OnlineBoutiqueMonitor:
         
         # 查询指标
         cpu_status, cpu_results = self.query_prometheus(
-            'avg(rate(container_cpu_usage_seconds_total[5m]))'
+            'max(rate(container_cpu_usage_seconds_total{namespace="default"}[1m]))'
         )
         cpu_usage = float(cpu_results[0]['value'][1]) if cpu_results else 0.0
         
         memory_status, memory_results = self.query_prometheus(
-            'avg(container_memory_usage_bytes) / 1024 / 1024'
+            'max(container_memory_usage_bytes{namespace="default"}) / 1024 / 1024'
         )
         memory_usage = float(memory_results[0]['value'][1]) if memory_results else 0.0
         
@@ -243,8 +256,11 @@ class OnlineBoutiqueMonitor:
         # 检查 Pod 状态
         pod_status = self.check_pod_status()
         
-        # 统计运行中的 Pod 数
-        running_pods = sum(1 for status in pod_status.values() if status['phase'] == 'Running')
+        # 统计 Pod 状态（Running + Ready 才算健康）
+        running_pods = sum(1 for s in pod_status.values() if s['phase'] == 'Running')
+        healthy_pods = sum(1 for s in pod_status.values()
+                          if s['phase'] == 'Running'
+                          and s['ready'].split('/')[0] == s['ready'].split('/')[1])
         
         # 输出报告
         print(f"\n[{timestamp}] 系统巡检报告")
@@ -260,13 +276,18 @@ class OnlineBoutiqueMonitor:
         
         # Pod 状态检查
         print("🔍 Pod 状态检查:")
-        if running_pods == len(pod_status):
+        if healthy_pods == len(pod_status):
             print("  所有 Pod 运行正常")
         else:
-            print(f"  异常 Pod 数: {len(pod_status) - running_pods}")
+            anomaly_count = len(pod_status) - healthy_pods
+            print(f"  异常 Pod 数: {anomaly_count}")
             for service, status in pod_status.items():
-                if status['phase'] != 'Running':
-                    print(f"    - {service}: {status['phase']}")
+                phase = status['phase']
+                ready = status['ready']
+                if phase != 'Running':
+                    print(f"    - {service}: {phase} (Ready={ready})")
+                elif ready.split('/')[0] != ready.split('/')[1]:
+                    print(f"    - {service}: Running (未就绪 Ready={ready})")
         
         print()
         
@@ -283,16 +304,101 @@ class OnlineBoutiqueMonitor:
         severity, diagnosis = self._generate_diagnosis(
             'system',
             metrics,
-            None
+            pod_status
         )
         
         print(f" [严重程度: {severity}]:")
         print(f"  {diagnosis}")
         print()
         
+        # 自动故障恢复
+        print("🩹 自动恢复", end="")
+        recoveries = self._auto_recover(severity, pod_status, metrics)
+        print()
+        
         print("=" * 70)
         
         return severity
+    
+    def _restart_deployment(self, service: str) -> bool:
+        """
+        重启指定服务的 Deployment
+        
+        Args:
+            service: 服务名称
+            
+        Returns:
+            True 表示重启成功
+        """
+        try:
+            cmd = [
+                'kubectl', 'rollout', 'restart',
+                f'deployment/{service}',
+                '--namespace', 'default'
+            ]
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=15)
+            if result.returncode == 0:
+                return True
+            else:
+                print(f" [失败: {service}]")
+                return False
+        except Exception as e:
+            print(f" [错误: {service} - {str(e)}]")
+            return False
+    
+    def _auto_recover(self, severity: str, pod_status: Dict[str, Dict], metrics: Dict) -> List[str]:
+        """
+        根据诊断结果自动执行故障恢复
+        
+        仅当 CRITICAL 且有明确的 Pod 异常时触发，
+        同一服务 60 秒内不重复重启。
+        
+        Args:
+            severity: 严重程度
+            pod_status: Pod 状态字典
+            metrics: 性能指标
+            
+        Returns:
+            已执行的恢复动作列表
+        """
+        if severity != 'CRITICAL':
+            return []
+        
+        now = time.time()
+        recoveries = []
+        
+        for svc, info in pod_status.items():
+            # 检查是否需要恢复：Pod 异常 或 不就绪
+            needs_recovery = False
+            if info['phase'] != 'Running':
+                needs_recovery = True
+            else:
+                parts = info['ready'].split('/')
+                if parts[0] != parts[1]:
+                    needs_recovery = True
+            
+            if not needs_recovery:
+                continue
+            
+            # 冷却检查：同一服务 60 秒内不重复
+            last_time = self._last_recovery.get(svc, 0)
+            if now - last_time < self.RECOVERY_COOLDOWN:
+                continue
+            
+            # 执行重启
+            success = self._restart_deployment(svc)
+            if success:
+                self._last_recovery[svc] = now
+                recoveries.append(svc)
+        
+        if recoveries:
+            print(":")
+            for svc in recoveries:
+                print(f"  [RESTART] {svc}")
+        else:
+            print(" (无需操作)")
+        
+        return recoveries
     
     def run_monitoring_loop(self, interval: int = 15, max_iterations: Optional[int] = None):
         """
@@ -302,8 +408,6 @@ class OnlineBoutiqueMonitor:
             interval: 巡检间隔（秒）
             max_iterations: 最大巡检次数（None = 无限循环）
         """
-        import time
-        
         try:
             while max_iterations is None or self.iteration < max_iterations:
                 self.analyze()
@@ -331,7 +435,7 @@ def main():
     print()
     print("-" * 70)
     
-    monitor.run_monitoring_loop(interval=15)
+    monitor.run_monitoring_loop(interval=10)
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 # Online Boutique — 微服务电商实验项目
 
-> 基于 Google 开源微服务 demo，新增评论系统 + 监控 + 故障注入，适合微服务实验/演练。
+> 基于 Google 开源微服务 demo，新增评论系统 + 监控 + 故障注入 + 智能运维 Agent，适合微服务实验/演练。
 
 ## 项目组成
 
@@ -8,8 +8,17 @@
 |------|------|
 | **Online Boutique** | 12 个微服务电商应用（含新增 Review 评论服务） |
 | **Prometheus + Grafana** | 监控采集与可视化 |
-| **VeADK Agent** | 智能运维巡检（自动诊断） |
-| **Chaos Mesh** | 故障注入（Pod Kill / 网络 / 压力） |
+| **VeADK Agent** | 智能运维 Agent — 异常检测、根因分类、故障注入验证、自动故障恢复 |
+| **Chaos Mesh** | 故障注入（Pod Kill / 网络 / 压力 / DNS / 组合） |
+
+## VeADK Agent 四大能力
+
+| 能力 | 说明 |
+|------|------|
+| 🔍 **异常检测** | 7 种异常：Pod 宕机/不就绪/频繁重启、CPU/内存偏高或过高、HTTP 5xx、gRPC 错误率 |
+| 🏷️ **根因分类** | 三级严重程度：HEALTHY / WARNING / CRITICAL，自动归类到具体服务和指标 |
+| ⚡ **故障注入与验证** | 8 种 Chaos Mesh 故障场景，`run-experiments.bat` 一键演练，10 秒内自动检测 |
+| 🩹 **自动故障恢复** | CRITICAL 时自动 `kubectl rollout restart` 重建异常 Deployment，60 秒冷却防抖动 |
 
 ## 架构
 
@@ -24,6 +33,9 @@
   ▼          ▼          ▼
 Prometheus  Grafana   Chaos Mesh
 (采集)      (可视化)   (故障注入)
+             │
+        VeADK Agent
+     (智能运维闭环)
 ```
 
 ## 实验前准备
@@ -118,10 +130,10 @@ kubectl get pods -n monitoring -w   # 等 Running
 打开两个终端：
 
 ```bash
-# 终端 1
+# 终端 1 — Prometheus
 kubectl port-forward -n monitoring svc/prometheus 9090:9090
 
-# 终端 2
+# 终端 2 — Grafana
 kubectl port-forward -n monitoring svc/grafana 3000:80
 ```
 
@@ -145,43 +157,83 @@ up
 
 ## 实验三：启动智能运维 Agent
 
-```bash
-cd release/agent
-pip install -r requirements.txt
-python run_monitor.py
+### 一键启动（推荐）
+
+```cmd
+cd release\agent
+run_monitor.bat
 ```
 
-Agent 每 15 秒输出一份巡检报告，严重程度分三级：
+或手动启动：
+
+```cmd
+cd release\agent
+python.exe run_monitor.py
+```
+
+Agent 每 10 秒输出一份巡检报告，严重程度分三级：
 - 🟢 **HEALTHY** — 正常
-- 🟡 **WARNING** — 轻度异常
-- 🔴 **CRITICAL** — 严重问题
+- 🟡 **WARNING** — 轻度异常（CPU 偏高 / 内存偏高）
+- 🔴 **CRITICAL** — 严重问题（Pod 异常 / Pod 不就绪 / 频繁重启 / CPU 过高 / 内存过高）
+
+当检测到 CRITICAL 时，Agent 会**自动执行故障恢复**：
+
+```
+🔬 诊断结论 [严重程度: CRITICAL]:
+  ✗ currencyservice Pod 不就绪 (Ready=0/1)
+
+🩹 自动恢复:
+  [RESTART] currencyservice
+```
+
+同一服务 60 秒内不会重复重启，防止抖动。
 
 ---
 
 ## 实验四：故障注入
 
-### 场景速查
+### 一键演练（推荐）
 
-| 故障 | 命令 | 观察点 |
-|------|------|--------|
-| 杀死 currencyservice Pod | `kubectl apply -f deploy/chaos-mesh/01-pod-kill-currencyservice.yaml` | Pod 自动重建、Agent 告警、Grafana 指标波动 |
-| 前端不可用 | `kubectl apply -f deploy/chaos-mesh/02-pod-kill-frontend.yaml` | 页面 503、kubectl get pods 看重启 |
-| productcatalog 网络延迟 | `kubectl apply -f deploy/chaos-mesh/03-network-delay-productcatalog.yaml` | 商品加载变慢、Prometheus 延迟上升 |
-| paymentservice 丢包 | `kubectl apply -f deploy/chaos-mesh/04-network-loss-paymentservice.yaml` | 支付超时 |
+在项目根目录打开 CMD：
 
-### 查看实验中
-
-```bash
-kubectl get podchaos,networkchaos,stresschaos -n chaos-testing
+```cmd
+deploy\chaos-mesh\run-experiments.bat
 ```
+
+菜单选择：
+- `1` 快速演练 — 3 个故障（Pod Kill + 网络延迟 + CPU 压力），约 2 分钟
+- `2` 完整演练 — 8 个故障全部跑一遍，约 5 分钟
+- `3` 自定义 — 选一个故障注入
+
+### 手动注入
+
+| 故障 | 命令 | Agent 预期反应 |
+|------|------|--------------|
+| 杀死 currencyservice | `kubectl apply -f deploy/chaos-mesh/01-pod-kill-currencyservice.yaml` | 🔴 CRITICAL + 自动重启 |
+| 前端不可用 | `kubectl apply -f deploy/chaos-mesh/02-pod-kill-frontend.yaml` | 🔴 CRITICAL + 自动重启 |
+| productcatalog 网络延迟 | `kubectl apply -f deploy/chaos-mesh/03-network-delay-productcatalog.yaml` | 🔴 CRITICAL（健康检查超时） |
+| paymentservice 丢包 | `kubectl apply -f deploy/chaos-mesh/04-network-loss-paymentservice.yaml` | 🔴 CRITICAL |
+| adservice CPU 压力 | `kubectl apply -f deploy/chaos-mesh/05-stress-cpu-adservice.yaml` | 🟡 WARNING（CPU 偏高） |
+| emailservice 内存压力 | `kubectl apply -f deploy/chaos-mesh/06-stress-memory-emailservice.yaml` | 内存升高告警 |
+| shippingservice DNS 故障 | `kubectl apply -f deploy/chaos-mesh/07-dns-chaos-shippingservice.yaml` | 🔴 CRITICAL |
+| checkoutservice 组合故障 | `kubectl apply -f deploy/chaos-mesh/08-combined-checkoutservice.yaml` | 🔴 CRITICAL |
 
 ### 清理
 
 ```bash
-kubectl delete podchaos kill-currencyservice -n chaos-testing
-# 或一键清空所有实验：
-kubectl delete all -n chaos-testing --all
+kubectl delete podchaos,networkchaos,stresschaos,dnschaos -n chaos-testing --all
 ```
+
+---
+
+## 实验五：运行单元测试
+
+```bash
+cd release\agent
+python.exe test_agent.py
+```
+
+预期输出：16 tests OK。
 
 ---
 
@@ -193,6 +245,9 @@ kubectl get pods
 
 # 查看监控组件
 kubectl get pods -n monitoring
+
+# 查看 Chaos Mesh 组件
+kubectl get pods -n chaos-testing
 
 # 重启某个服务
 kubectl rollout restart deployment/frontend
@@ -216,6 +271,8 @@ minikube service frontend-external
 | 前端 500 错误 | 后端未就绪 | 等待所有 Pod `Running` 后刷新 |
 | Grafana 连不上 Prometheus | 端口转发未开 | 确保两个 `port-forward` 都在运行 |
 | Chaos 实验未生效 | Chaos Mesh 未安装 | `kubectl get ns chaos-testing` 确认命名空间存在 |
+| Agent 打印乱码 | Windows GBK 编码 | 用 `run_monitor.bat` 或 `run_monitor.py` 启动 |
+| Agent 始终 HEALTHY | Prometheus 端口转发未开 | 确保 `kubectl port-forward -n monitoring svc/prometheus 9090:9090` 在运行 |
 
 ---
 
@@ -242,16 +299,16 @@ minikube delete     # 完全删除（释放资源）
 ## 项目结构
 
 ```
-├── src/                           # 12 个微服务源码（含 reviewservice）
-├── deploy-all.yaml                # 一键部署所有服务
+├── src/                                     # 12 个微服务源码（含 reviewservice）
+├── deploy-all.yaml                          # 一键部署所有服务
 ├── deploy/
-│   ├── kubernetes/manifests-monitoring/   # Prometheus + Grafana
-│   └── chaos-mesh/                        # 8 个故障场景
+│   ├── kubernetes/manifests-monitoring/     # Prometheus + Grafana
+│   └── chaos-mesh/                          # 8 个故障场景 + run-experiments.bat
 ├── release/
-│   └── agent/                     # VeADK 智能运维 Agent
+│   └── agent/                               # VeADK 智能运维 Agent + run_monitor.bat
 └── README.md
 ```
 
 ---
 
-**版本**: 1.1.0 &nbsp;|&nbsp; **许可证**: Apache 2.0 &nbsp;|&nbsp; **基于** [Google microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo)
+**版本**: 2.0.0 &nbsp;|&nbsp; **许可证**: Apache 2.0 &nbsp;|&nbsp; **基于** [Google microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo)

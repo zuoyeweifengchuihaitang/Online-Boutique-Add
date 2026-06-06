@@ -47,12 +47,13 @@ class TestOnlineBoutiqueMonitor(unittest.TestCase):
     
     def test_severity_thresholds(self):
         """测试严重程度阈值"""
-        self.assertEqual(self.monitor.CPU_WARNING, 0.50)
+        self.assertEqual(self.monitor.CPU_WARNING, 0.15)
         self.assertEqual(self.monitor.CPU_CRITICAL, 0.80)
         self.assertEqual(self.monitor.MEMORY_WARNING, 2 * 1024)
         self.assertEqual(self.monitor.MEMORY_CRITICAL, 4 * 1024)
         self.assertEqual(self.monitor.ERROR_RATE_WARNING, 0.005)
         self.assertEqual(self.monitor.ERROR_RATE_CRITICAL, 0.01)
+        self.assertEqual(self.monitor.POD_RESTART_WARNING, 15)
     
     @patch('requests.get')
     def test_query_prometheus_success(self, mock_get):
@@ -92,13 +93,13 @@ class TestOnlineBoutiqueMonitor(unittest.TestCase):
     def test_generate_diagnosis_healthy(self):
         """测试诊断 - 健康状态"""
         metrics = {
-            'cpu': 0.3,
+            'cpu': 0.05,
             'memory': 1000,
             'http_error_rate': 0.0001,
             'grpc_error_rate': 0.0
         }
         
-        severity, diagnosis = self.monitor._generate_diagnosis('service', metrics, None)
+        severity, diagnosis = self.monitor._generate_diagnosis('service', metrics, {})
         
         self.assertEqual(severity, 'HEALTHY')
         self.assertIn('正常', diagnosis)
@@ -112,7 +113,7 @@ class TestOnlineBoutiqueMonitor(unittest.TestCase):
             'grpc_error_rate': 0.0
         }
         
-        severity, diagnosis = self.monitor._generate_diagnosis('service', metrics, None)
+        severity, diagnosis = self.monitor._generate_diagnosis('service', metrics, {})
         
         self.assertEqual(severity, 'WARNING')
         self.assertIn('CPU', diagnosis)
@@ -126,10 +127,150 @@ class TestOnlineBoutiqueMonitor(unittest.TestCase):
             'grpc_error_rate': 0.02
         }
         
-        severity, diagnosis = self.monitor._generate_diagnosis('service', metrics, None)
+        severity, diagnosis = self.monitor._generate_diagnosis('service', metrics, {})
         
         self.assertEqual(severity, 'CRITICAL')
         self.assertIn('✗', diagnosis)
+    
+    def test_generate_diagnosis_pod_pending(self):
+        """测试诊断 - Pod Pending 应判为 CRITICAL"""
+        metrics = {'cpu': 0.3, 'memory': 1000, 'http_error_rate': 0.0, 'grpc_error_rate': 0.0}
+        pod_status = {
+            'currencyservice': {
+                'pod_name': 'currencyservice-xxx',
+                'phase': 'Pending',
+                'ready': '0/1',
+                'restarts': 0,
+                'containers': []
+            }
+        }
+        
+        severity, diagnosis = self.monitor._generate_diagnosis('system', metrics, pod_status)
+        
+        self.assertEqual(severity, 'CRITICAL')
+        self.assertIn('currencyservice', diagnosis)
+        self.assertIn('Pending', diagnosis)
+    
+    def test_generate_diagnosis_pod_not_ready(self):
+        """测试诊断 - Pod 不就绪应判为 CRITICAL"""
+        metrics = {'cpu': 0.3, 'memory': 1000, 'http_error_rate': 0.0, 'grpc_error_rate': 0.0}
+        pod_status = {
+            'frontend': {
+                'pod_name': 'frontend-xxx',
+                'phase': 'Running',
+                'ready': '0/1',
+                'restarts': 0,
+                'containers': []
+            }
+        }
+        
+        severity, diagnosis = self.monitor._generate_diagnosis('system', metrics, pod_status)
+        
+        self.assertEqual(severity, 'CRITICAL')
+        self.assertIn('不就绪', diagnosis)
+    
+    def test_generate_diagnosis_pod_restarts(self):
+        """测试诊断 - Pod 频繁重启应判为 CRITICAL"""
+        metrics = {'cpu': 0.3, 'memory': 1000, 'http_error_rate': 0.0, 'grpc_error_rate': 0.0}
+        pod_status = {
+            'adservice': {
+                'pod_name': 'adservice-xxx',
+                'phase': 'Running',
+                'ready': '1/1',
+                'restarts': 20,
+                'containers': []
+            }
+        }
+        
+        severity, diagnosis = self.monitor._generate_diagnosis('system', metrics, pod_status)
+        
+        self.assertEqual(severity, 'CRITICAL')
+        self.assertIn('重启', diagnosis)
+    
+    def test_generate_diagnosis_multiple_pod_issues(self):
+        """测试诊断 - 多个 Pod 异常合并报告"""
+        metrics = {'cpu': 0.3, 'memory': 1000, 'http_error_rate': 0.0, 'grpc_error_rate': 0.0}
+        pod_status = {
+            'currencyservice': {
+                'pod_name': 'currencyservice-xxx',
+                'phase': 'Pending',
+                'ready': '0/1',
+                'restarts': 0,
+                'containers': []
+            },
+            'frontend': {
+                'pod_name': 'frontend-xxx',
+                'phase': 'Running',
+                'ready': '0/1',
+                'restarts': 5,
+                'containers': []
+            }
+        }
+        
+        severity, diagnosis = self.monitor._generate_diagnosis('system', metrics, pod_status)
+        
+        self.assertEqual(severity, 'CRITICAL')
+        self.assertIn('currencyservice', diagnosis)
+        self.assertIn('frontend', diagnosis)
+    
+    @patch.object(OnlineBoutiqueMonitor, '_restart_deployment', return_value=True)
+    def test_auto_recover_critical(self, mock_restart):
+        """测试自动恢复 - CRITICAL 触发重启"""
+        pod_status = {
+            'currencyservice': {
+                'pod_name': 'currencyservice-xxx',
+                'phase': 'Pending',
+                'ready': '0/1',
+                'restarts': 0,
+                'containers': []
+            }
+        }
+        metrics = {'cpu': 0.05, 'memory': 1000, 'http_error_rate': 0.0, 'grpc_error_rate': 0.0}
+        
+        recoveries = self.monitor._auto_recover('CRITICAL', pod_status, metrics)
+        
+        self.assertEqual(recoveries, ['currencyservice'])
+        mock_restart.assert_called_once_with('currencyservice')
+        self.assertIn('currencyservice', self.monitor._last_recovery)
+    
+    def test_auto_recover_healthy(self):
+        """测试自动恢复 - HEALTHY 不触发恢复"""
+        pod_status = {
+            'currencyservice': {
+                'pod_name': 'currencyservice-xxx',
+                'phase': 'Running',
+                'ready': '1/1',
+                'restarts': 0,
+                'containers': []
+            }
+        }
+        metrics = {'cpu': 0.05, 'memory': 1000, 'http_error_rate': 0.0, 'grpc_error_rate': 0.0}
+        
+        recoveries = self.monitor._auto_recover('HEALTHY', pod_status, metrics)
+        
+        self.assertEqual(recoveries, [])
+    
+    @patch.object(OnlineBoutiqueMonitor, '_restart_deployment', return_value=True)
+    def test_auto_recover_cooldown(self, mock_restart):
+        """测试自动恢复 - 冷却期内不重复重启"""
+        pod_status = {
+            'currencyservice': {
+                'pod_name': 'currencyservice-xxx',
+                'phase': 'Pending',
+                'ready': '0/1',
+                'restarts': 0,
+                'containers': []
+            }
+        }
+        metrics = {'cpu': 0.05, 'memory': 1000, 'http_error_rate': 0.0, 'grpc_error_rate': 0.0}
+        
+        # 第一次恢复
+        self.monitor._auto_recover('CRITICAL', pod_status, metrics)
+        self.assertEqual(mock_restart.call_count, 1)
+        
+        # 立即再次触发，应在冷却期内被跳过
+        self.monitor._auto_recover('CRITICAL', pod_status, metrics)
+        self.assertEqual(mock_restart.call_count, 1)  # 没有增加
 
 
 if __name__ == '__main__':
