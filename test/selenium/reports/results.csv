@@ -1,0 +1,106 @@
+﻿timestamp,browser,test_case,status,duration_ms,current_url,error_type,error_message,screenshot,operation_metrics
+2026-06-06T22:12:06,chrome,TC03：加入购物车,failed,3136.06,,RuntimeError,"浏览器启动失败：browser=chrome, headless=True。请确认浏览器已安装，且 Selenium Manager 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T22:12:06,chrome,TC04：清空购物车,failed,124.4,,RuntimeError,"浏览器启动失败：browser=chrome, headless=True。请确认浏览器已安装，且 Selenium Manager 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T22:12:06,chrome,TC07：页面刷新和会话保持,failed,124.44,,RuntimeError,"浏览器启动失败：browser=chrome, headless=True。请确认浏览器已安装，且 Selenium Manager 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T22:12:06,chrome,TC06：完整结算流程,failed,123.3,,RuntimeError,"浏览器启动失败：browser=chrome, headless=True。请确认浏览器已安装，且 Selenium Manager 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T22:12:06,chrome,TC05：币种切换,failed,135.46,,RuntimeError,"浏览器启动失败：browser=chrome, headless=True。请确认浏览器已安装，且 Selenium Manager 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T22:12:06,chrome,TC01：首页加载,failed,129.12,,RuntimeError,"浏览器启动失败：browser=chrome, headless=True。请确认浏览器已安装，且 Selenium Manager 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T22:12:06,chrome,TC02：商品详情,failed,147.22,,RuntimeError,"浏览器启动失败：browser=chrome, headless=True。请确认浏览器已安装，且 Selenium Manager 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T22:13:04,MicrosoftEdge,TC03：加入购物车,passed,10040.15,http://127.0.0.1:8080/cart,,,,"{""add_to_cart"": 615.87}"
+2026-06-06T22:13:10,MicrosoftEdge,TC04：清空购物车,passed,3319.19,http://127.0.0.1:8080/cart,,,,"{""empty_cart"": 176.24}"
+2026-06-06T22:13:15,MicrosoftEdge,TC07：页面刷新和会话保持,passed,2950.51,http://127.0.0.1:8080/cart,,,,"{""cart_refresh"": 81.56}"
+2026-06-06T22:13:22,MicrosoftEdge,TC06：完整结算流程,passed,4396.93,http://127.0.0.1:8080/cart/checkout,,,reports\screenshots\edge_test_tc06_complete_checkout_order_success_20260606_221322_102202.png,"{""cart_open"": 608.68, ""submit_order"": 647.78, ""complete_shopping_flow"": 3102.41}"
+2026-06-06T22:13:31,MicrosoftEdge,TC05：币种切换,passed,7482.26,http://127.0.0.1:8080/,,,,"{""currency_switch"": 226.4}"
+2026-06-06T22:13:36,MicrosoftEdge,TC01：首页加载,passed,2170.6,http://127.0.0.1:8080/,,,reports\screenshots\edge_test_tc01_home_page_loads_home_success_20260606_221336_054507.png,"{""home_load"": 752.47, ""home_navigation_timing"": 0.0}"
+2026-06-06T22:13:40,MicrosoftEdge,TC02：商品详情,passed,2261.22,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""product_detail_load"": 200.94}"
+2026-06-06T23:14:58,chrome,TC03：加入购物车,passed,7720.77,http://127.0.0.1:8080/cart,,,,"{""add_to_cart"": 624.51}"
+2026-06-06T23:15:19,chrome,TC04：清空购物车,failed,18385.73,http://127.0.0.1:8080/,TimeoutException,"Message: 元素未在预期时间内可见: ('css selector', 'main.cart-sections')
+",reports\screenshots\chrome_test_tc04_empty_cart_20260606_231519_289382.png,"{""empty_cart"": 15299.19}"
+2026-06-06T23:15:25,chrome,TC07：页面刷新和会话保持,passed,3599.64,http://127.0.0.1:8080/cart,,,,"{""cart_refresh"": 135.03}"
+2026-06-06T23:15:30,chrome,TC06：完整结算流程,passed,3352.78,http://127.0.0.1:8080/cart/checkout,,,reports\screenshots\chrome_test_tc06_complete_checkout_order_success_20260606_231530_874734.png,"{""cart_open"": 125.58, ""submit_order"": 150.68, ""complete_shopping_flow"": 2088.43}"
+2026-06-06T23:15:35,chrome,TC05：币种切换,passed,2300.52,http://127.0.0.1:8080/,,,,"{""currency_switch"": 178.1}"
+2026-06-06T23:15:39,chrome,TC01：首页加载,passed,1996.12,http://127.0.0.1:8080/,,,reports\screenshots\chrome_test_tc01_home_page_loads_home_success_20260606_231539_491503.png,"{""home_load"": 743.94, ""home_navigation_timing"": 0.0}"
+2026-06-06T23:15:49,chrome,TC02：商品详情,passed,7703.88,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""product_detail_load"": 416.94}"
+2026-06-06T23:17:11,chrome,TC03：加入购物车,passed,2689.61,http://127.0.0.1:8080/cart,,,,"{""add_to_cart"": 601.28}"
+2026-06-06T23:17:16,chrome,TC04：清空购物车,passed,2961.34,http://127.0.0.1:8080/cart,,,,"{""empty_cart"": 191.74}"
+2026-06-06T23:17:22,chrome,TC07：页面刷新和会话保持,passed,3331.64,http://127.0.0.1:8080/cart,,,,"{""cart_refresh"": 76.26}"
+2026-06-06T23:17:28,chrome,TC06：完整结算流程,passed,3669.63,http://127.0.0.1:8080/cart/checkout,,,reports\screenshots\chrome_test_tc06_complete_checkout_order_success_20260606_231727_959949.png,"{""cart_open"": 134.86, ""submit_order"": 251.04, ""complete_shopping_flow"": 2471.44}"
+2026-06-06T23:17:33,chrome,TC05：币种切换,passed,2898.91,http://127.0.0.1:8080/,,,,"{""currency_switch"": 239.16}"
+2026-06-06T23:17:37,chrome,TC01：首页加载,passed,1915.13,http://127.0.0.1:8080/,,,reports\screenshots\chrome_test_tc01_home_page_loads_home_success_20260606_231737_086721.png,"{""home_load"": 716.56, ""home_navigation_timing"": 0.0}"
+2026-06-06T23:17:41,chrome,TC02：商品详情,passed,2299.06,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""product_detail_load"": 162.18}"
+2026-06-06T23:19:12,MicrosoftEdge,TC03：加入购物车,passed,3646.75,http://127.0.0.1:8080/cart,,,,"{""add_to_cart"": 598.28}"
+2026-06-06T23:19:18,MicrosoftEdge,TC04：清空购物车,passed,3698.28,http://127.0.0.1:8080/cart,,,,"{""empty_cart"": 631.89}"
+2026-06-06T23:19:23,MicrosoftEdge,TC07：页面刷新和会话保持,passed,2736.44,http://127.0.0.1:8080/cart,,,,"{""cart_refresh"": 64.36}"
+2026-06-06T23:19:30,MicrosoftEdge,TC06：完整结算流程,passed,4513.66,http://127.0.0.1:8080/cart/checkout,,,reports\screenshots\edge_test_tc06_complete_checkout_order_success_20260606_231930_104972.png,"{""cart_open"": 155.24, ""submit_order"": 651.13, ""complete_shopping_flow"": 3262.69}"
+2026-06-06T23:19:34,MicrosoftEdge,TC05：币种切换,passed,2462.53,http://127.0.0.1:8080/,,,,"{""currency_switch"": 256.5}"
+2026-06-06T23:19:39,MicrosoftEdge,TC01：首页加载,passed,2076.49,http://127.0.0.1:8080/,,,reports\screenshots\edge_test_tc01_home_page_loads_home_success_20260606_231938_928142.png,"{""home_load"": 764.62, ""home_navigation_timing"": 0.0}"
+2026-06-06T23:19:43,MicrosoftEdge,TC02：商品详情,passed,2202.5,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""product_detail_load"": 223.58}"
+2026-06-06T23:22:59,firefox,TC03：加入购物车,failed,166414.37,,RuntimeError,"浏览器启动失败：browser=firefox, headless=True。请确认浏览器已安装，且 Selenium Manager 或 --driver-path 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T23:23:20,firefox,TC04：清空购物车,failed,21199.55,,RuntimeError,"浏览器启动失败：browser=firefox, headless=True。请确认浏览器已安装，且 Selenium Manager 或 --driver-path 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T23:23:41,firefox,TC07：页面刷新和会话保持,failed,21166.23,,RuntimeError,"浏览器启动失败：browser=firefox, headless=True。请确认浏览器已安装，且 Selenium Manager 或 --driver-path 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T23:24:02,firefox,TC06：完整结算流程,failed,21170.68,,RuntimeError,"浏览器启动失败：browser=firefox, headless=True。请确认浏览器已安装，且 Selenium Manager 或 --driver-path 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T23:24:23,firefox,TC05：币种切换,failed,21154.6,,RuntimeError,"浏览器启动失败：browser=firefox, headless=True。请确认浏览器已安装，且 Selenium Manager 或 --driver-path 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T23:24:45,firefox,TC01：首页加载,failed,21221.19,,RuntimeError,"浏览器启动失败：browser=firefox, headless=True。请确认浏览器已安装，且 Selenium Manager 或 --driver-path 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T23:25:06,firefox,TC02：商品详情,failed,21225.11,,RuntimeError,"浏览器启动失败：browser=firefox, headless=True。请确认浏览器已安装，且 Selenium Manager 或 --driver-path 可以获取匹配驱动。原始错误：Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+",,{}
+2026-06-06T23:32:13,firefox,TC03：加入购物车,passed,3413.06,http://127.0.0.1:8080/cart,,,,"{""add_to_cart"": 93.32}"
+2026-06-06T23:32:20,firefox,TC04：清空购物车,passed,5698.84,http://127.0.0.1:8080/cart,,,,"{""empty_cart"": 144.47}"
+2026-06-06T23:32:30,firefox,TC07：页面刷新和会话保持,passed,8877.34,http://127.0.0.1:8080/cart,,,,"{""cart_refresh"": 5738.34}"
+2026-06-06T23:32:34,firefox,TC06：完整结算流程,passed,3671.31,http://127.0.0.1:8080/cart/checkout,,,reports\screenshots\firefox_test_tc06_complete_checkout_order_success_20260606_233234_588607.png,"{""cart_open"": 120.8, ""submit_order"": 86.16, ""complete_shopping_flow"": 1656.63}"
+2026-06-06T23:32:39,firefox,TC05：币种切换,passed,4335.93,http://127.0.0.1:8080/,,,,"{""currency_switch"": 141.51}"
+2026-06-06T23:32:43,firefox,TC01：首页加载,passed,3179.88,http://127.0.0.1:8080/,,,reports\screenshots\firefox_test_tc01_home_page_loads_home_success_20260606_233243_827063.png,"{""home_load"": 1106.48, ""home_navigation_timing"": 0.0}"
+2026-06-06T23:32:47,firefox,TC02：商品详情,passed,3227.29,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""product_detail_load"": 122.88}"
+2026-06-07T00:16:47,chrome,TC08：评论区加载,passed,2420.91,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_section_load"": 77.43}"
+2026-06-07T00:16:53,chrome,TC09：提交评论,passed,3996.88,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_submit"": 1922.48}"
+2026-06-07T00:16:59,chrome,TC10：评论刷新保持,passed,4246.52,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_refresh"": 156.75}"
+2026-06-07T00:17:06,chrome,TC11：评论商品隔离,passed,4616.94,http://127.0.0.1:8080/product/66VCHSJNUP,,,,"{""review_product_isolation"": 401.68}"
+2026-06-07T00:17:12,chrome,TC12：评论内容转义,passed,4177.88,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_html_escape"": 2054.4}"
+2026-06-07T00:17:30,chrome,TC03：加入购物车,passed,2828.58,http://127.0.0.1:8080/cart,,,,"{""add_to_cart"": 603.61}"
+2026-06-07T00:17:35,chrome,TC04：清空购物车,passed,2497.78,http://127.0.0.1:8080/cart,,,,"{""empty_cart"": 141.97}"
+2026-06-07T00:17:40,chrome,TC07：页面刷新和会话保持,passed,2637.49,http://127.0.0.1:8080/cart,,,,"{""cart_refresh"": 63.55}"
+2026-06-07T00:17:45,chrome,TC06：完整结算流程,passed,3382.3,http://127.0.0.1:8080/cart/checkout,,,reports\screenshots\chrome_test_tc06_complete_checkout_order_success_20260607_001745_752495.png,"{""cart_open"": 131.97, ""submit_order"": 589.81, ""complete_shopping_flow"": 2230.74}"
+2026-06-07T00:17:50,chrome,TC08：评论区加载,passed,2094.25,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_section_load"": 78.34}"
+2026-06-07T00:17:56,chrome,TC09：提交评论,passed,4137.34,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_submit"": 2037.08}"
+2026-06-07T00:18:03,chrome,TC10：评论刷新保持,passed,4662.63,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_refresh"": 166.34}"
+2026-06-07T00:18:10,chrome,TC11：评论商品隔离,passed,4715.53,http://127.0.0.1:8080/product/66VCHSJNUP,,,,"{""review_product_isolation"": 377.17}"
+2026-06-07T00:18:16,chrome,TC12：评论内容转义,passed,4284.0,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_html_escape"": 2095.49}"
+2026-06-07T00:18:25,chrome,TC05：币种切换,passed,7309.88,http://127.0.0.1:8080/,,,,"{""currency_switch"": 194.11}"
+2026-06-07T00:18:30,chrome,TC01：首页加载,passed,2113.56,http://127.0.0.1:8080/,,,reports\screenshots\chrome_test_tc01_home_page_loads_home_success_20260607_001830_074415.png,"{""home_load"": 905.14, ""home_navigation_timing"": 0.0}"
+2026-06-07T00:18:34,chrome,TC02：商品详情,passed,2246.58,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""product_detail_load"": 228.28}"
+2026-06-07T00:22:13,MicrosoftEdge,TC03：加入购物车,passed,3973.22,http://127.0.0.1:8080/cart,,,,"{""add_to_cart"": 150.37}"
+2026-06-07T00:22:18,MicrosoftEdge,TC04：清空购物车,passed,2958.66,http://127.0.0.1:8080/cart,,,,"{""empty_cart"": 174.52}"
+2026-06-07T00:22:28,MicrosoftEdge,TC07：页面刷新和会话保持,passed,8014.69,http://127.0.0.1:8080/cart,,,,"{""cart_refresh"": 83.15}"
+2026-06-07T00:22:35,MicrosoftEdge,TC06：完整结算流程,passed,4195.53,http://127.0.0.1:8080/cart/checkout,,,reports\screenshots\edge_test_tc06_complete_checkout_order_success_20260607_002235_244226.png,"{""cart_open"": 592.48, ""submit_order"": 583.64, ""complete_shopping_flow"": 2898.06}"
+2026-06-07T00:22:39,MicrosoftEdge,TC08：评论区加载,passed,2298.32,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_section_load"": 102.74}"
+2026-06-07T00:22:46,MicrosoftEdge,TC09：提交评论,passed,4757.78,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_submit"": 2227.13}"
+2026-06-07T00:22:53,MicrosoftEdge,TC10：评论刷新保持,passed,4676.81,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_refresh"": 190.65}"
+2026-06-07T00:23:01,MicrosoftEdge,TC11：评论商品隔离,passed,5454.64,http://127.0.0.1:8080/product/66VCHSJNUP,,,,"{""review_product_isolation"": 396.74}"
+2026-06-07T00:23:08,MicrosoftEdge,TC12：评论内容转义,passed,4580.44,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_html_escape"": 2352.84}"
+2026-06-07T00:23:12,MicrosoftEdge,TC05：币种切换,passed,2375.14,http://127.0.0.1:8080/,,,,"{""currency_switch"": 209.32}"
+2026-06-07T00:23:17,MicrosoftEdge,TC01：首页加载,passed,2334.04,http://127.0.0.1:8080/,,,reports\screenshots\edge_test_tc01_home_page_loads_home_success_20260607_002317_228598.png,"{""home_load"": 1028.2, ""home_navigation_timing"": 0.0}"
+2026-06-07T00:23:22,MicrosoftEdge,TC02：商品详情,passed,2537.48,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""product_detail_load"": 213.1}"
+2026-06-07T00:23:43,firefox,TC03：加入购物车,passed,3333.9,http://127.0.0.1:8080/cart,,,,"{""add_to_cart"": 149.37}"
+2026-06-07T00:23:48,firefox,TC04：清空购物车,passed,3673.18,http://127.0.0.1:8080/cart,,,,"{""empty_cart"": 192.8}"
+2026-06-07T00:23:53,firefox,TC07：页面刷新和会话保持,passed,4341.98,http://127.0.0.1:8080/cart,,,,"{""cart_refresh"": 736.82}"
+2026-06-07T00:23:59,firefox,TC06：完整结算流程,passed,4212.14,http://127.0.0.1:8080/cart/checkout,,,reports\screenshots\firefox_test_tc06_complete_checkout_order_success_20260607_002359_170735.png,"{""cart_open"": 135.78, ""submit_order"": 132.58, ""complete_shopping_flow"": 2171.53}"
+2026-06-07T00:24:03,firefox,TC08：评论区加载,passed,3739.84,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_section_load"": 126.18}"
+2026-06-07T00:24:10,firefox,TC09：提交评论,passed,6408.6,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_submit"": 2218.47}"
+2026-06-07T00:24:17,firefox,TC10：评论刷新保持,passed,6417.1,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_refresh"": 949.69}"
+2026-06-07T00:24:24,firefox,TC11：评论商品隔离,passed,5938.69,http://127.0.0.1:8080/product/66VCHSJNUP,,,,"{""review_product_isolation"": 354.31}"
+2026-06-07T00:24:30,firefox,TC12：评论内容转义,passed,5610.93,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""review_html_escape"": 2311.6}"
+2026-06-07T00:24:35,firefox,TC05：币种切换,passed,5157.92,http://127.0.0.1:8080/,,,,"{""currency_switch"": 147.2}"
+2026-06-07T00:24:39,firefox,TC01：首页加载,passed,3535.21,http://127.0.0.1:8080/,,,reports\screenshots\firefox_test_tc01_home_page_loads_home_success_20260607_002439_673922.png,"{""home_load"": 1021.13, ""home_navigation_timing"": 0.0}"
+2026-06-07T00:24:43,firefox,TC02：商品详情,passed,3435.3,http://127.0.0.1:8080/product/OLJCESPC7Z,,,,"{""product_detail_load"": 248.99}"
