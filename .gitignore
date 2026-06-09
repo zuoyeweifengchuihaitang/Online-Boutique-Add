@@ -30,3 +30,14 @@ vendor/
 .env
 .codegraph/
 .serena/
+
+test/jmeter/results/*
+!test/jmeter/results/.gitkeep
+
+test/jmeter/reports/*
+!test/jmeter/reports/.gitkeep
+
+test/jmeter/logs/*
+!test/jmeter/logs/.gitkeep
+
+test/jmeter/experiments/*/

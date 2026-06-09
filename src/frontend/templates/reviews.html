@@ -1,0 +1,49 @@
+<!--
+ Copyright 2024 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+{{ define "reviews" }}
+<div class="reviews-fragment" data-product-id="{{ $.product_id }}">
+  <h3 class="reviews-title">Customer Reviews
+    {{ if $.review_stats }}
+    <span class="review-stats-badge">
+      <span class="stars">{{ starRating $.review_stats.AverageRating }}</span>
+      <span class="avg-rating">{{ printf "%.1f" $.review_stats.AverageRating }}</span>
+      <span class="review-count">({{ $.review_stats.TotalReviews }})</span>
+    </span>
+    {{ end }}
+  </h3>
+
+  {{ if $.reviews }}
+  <div class="reviews-list">
+    {{ range $.reviews }}
+    <div class="review-card">
+      <div class="review-header">
+        <span class="review-rating">{{ starRating .Rating }}</span>
+        <span class="review-title">{{ .Title }}</span>
+      </div>
+      <div class="review-meta">
+        <span class="review-author">{{ .UserName }}</span>
+        <span class="review-date">{{ .CreatedAt.Format "Jan 2, 2006" }}</span>
+      </div>
+      <p class="review-content">{{ .Content }}</p>
+    </div>
+    {{ end }}
+  </div>
+  {{ else }}
+  <p class="no-reviews">No reviews yet. Be the first to review this product!</p>
+  {{ end }}
+</div>
+{{ end }}
