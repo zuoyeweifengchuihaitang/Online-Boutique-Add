@@ -237,6 +237,67 @@ python.exe test_agent.py
 
 ---
 
+## 实验六：JMeter 压力测试
+
+JMeter 测试脚本位于 `test/jmeter/`，支持多种场景的自动化压测。
+
+### 环境要求
+
+- Apache JMeter 5.6.3+（需配置到 PATH）
+- Java 运行环境
+- Python 3.10+
+- 已部署 Online Boutique，frontend 和 reviewservice 使用本地镜像
+
+### 启动端口转发或隧道
+
+```powershell
+# 方式 A：minikube tunnel（推荐，更稳定）
+minikube tunnel
+```
+
+或
+
+```powershell
+# 方式 B：kubectl port-forward
+kubectl port-forward deployment/frontend 8080:8080
+```
+
+### 运行测试
+
+```powershell
+cd test\jmeter
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\scripts\run-test.ps1 -Config ./config/smoke.properties -RunId OB-SMOKE-R01 -host 127.0.0.1 -port 80 -SkipEnvironmentCheck
+```
+
+### 测试配置说明
+
+| 配置文件 | 场景 | 并发 | 时长 |
+|---------|------|:---:|:----:|
+| `smoke.properties` | 冒烟测试（基本功能验证） | 1用户 | 60s |
+| `negative-review.properties` | 负面测试（评论验证逻辑） | 1用户 | 1s |
+| `baseline-10.properties` | 混合购物基准 | 10用户 | 300s |
+| `baseline-30.properties` | 混合购物基准 | 30用户 | 300s |
+| `baseline-50.properties` | 混合购物基准 | 50用户 | 300s |
+| `review-read-30.properties` | 纯读评论压力 | 30用户 | 300s |
+| `review-write-10.properties` | 评论写入+验证 | 10用户 | 300s |
+
+### 测试结果
+
+每次运行结果保存在 `test/jmeter/experiments/<RUN_ID>/`，包含：
+- `summary.md` / `summary.csv` — 结果摘要
+- `jmeter/report/` — HTML 报告
+- `events.csv` — 事件时间线
+
+```bash
+cd release\agent
+python.exe test_agent.py
+```
+
+预期输出：16 tests OK。
+
+---
+
 ## 常用命令速查
 
 ```bash
@@ -306,6 +367,8 @@ minikube delete     # 完全删除（释放资源）
 │   └── chaos-mesh/                          # 8 个故障场景 + run-experiments.bat
 ├── release/
 │   └── agent/                               # VeADK 智能运维 Agent + run_monitor.bat
+├── test/
+│   └── jmeter/                               # JMeter 压力测试脚本 + 实验报告
 └── README.md
 ```
 
