@@ -298,6 +298,46 @@ python.exe test_agent.py
 
 ---
 
+## 实验七：Selenium 浏览器功能测试
+
+基于 Python + pytest + Selenium 4 的浏览器自动化测试，位于 `test/selenium/`。
+
+### 安装依赖
+
+```powershell
+cd test\selenium
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### 运行测试
+
+确保端口转发开着：
+```powershell
+kubectl port-forward deployment/frontend 8080:8080
+```
+
+全量测试：
+```powershell
+pytest -v --browser=chrome --headless --base-url=http://127.0.0.1:8080
+```
+
+评论专项测试：
+```powershell
+pytest -v tests/test_comments.py --browser=chrome --headless --base-url=http://127.0.0.1:8080
+```
+
+生成报告：
+```powershell
+pytest -v --browser=chrome --headless --base-url=http://127.0.0.1:8080 --html=reports/report.html --self-contained-html
+```
+
+支持浏览器：`chrome` / `edge` / `firefox`，用 `--browser` 切换。
+
+---
+
 ## 常用命令速查
 
 ```bash
@@ -368,7 +408,8 @@ minikube delete     # 完全删除（释放资源）
 ├── release/
 │   └── agent/                               # VeADK 智能运维 Agent + run_monitor.bat
 ├── test/
-│   └── jmeter/                               # JMeter 压力测试脚本 + 实验报告
+│   ├── jmeter/                               # JMeter 压力测试脚本 + 实验报告
+│   └── selenium/                             # Selenium 浏览器功能测试
 └── README.md
 ```
 
