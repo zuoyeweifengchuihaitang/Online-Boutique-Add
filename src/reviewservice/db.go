@@ -45,9 +45,34 @@ func newReviewDB(dataSource string) (*reviewDB, error) {
 	if err != nil {
 		return nil, errors.Wrap(err, "failed to open sqlite database")
 	}
+
+	// Limit to a single connection to eliminate concurrent SQLite lock contention.
+	// With WAL mode reads can proceed in parallel; limit to 5 connections
+	// to balance concurrency without overwhelming SQLite's single-writer lock.
+	db.SetMaxOpenConns(5)
+	db.SetMaxIdleConns(5)
+	db.SetConnMaxLifetime(0)
+
 	if err := db.Ping(); err != nil {
 		return nil, errors.Wrap(err, "failed to ping sqlite database")
 	}
+
+	// Enable WAL mode and performance pragmas.
+	// WAL allows concurrent reads even while a write is in progress.
+	// busy_timeout makes SQLite wait for the lock instead of failing immediately.
+	// synchronous=NORMAL improves write speed without compromising crash safety in WAL mode.
+	// cache_size increases memory cache for faster reads.
+	// temp_store=MEMORY avoids disk writes for temp tables.
+	if _, err := db.Exec(`
+		PRAGMA journal_mode=WAL;
+		PRAGMA busy_timeout=5000;
+		PRAGMA synchronous=NORMAL;
+		PRAGMA cache_size=-20000;
+		PRAGMA temp_store=MEMORY;
+	`); err != nil {
+		return nil, errors.Wrap(err, "failed to set sqlite pragmas")
+	}
+
 	if _, err := db.Exec(initSQL); err != nil {
 		return nil, errors.Wrap(err, "failed to initialize database schema")
 	}

@@ -56,6 +56,36 @@ var (
 	plat platformDetails
 )
 
+// retryHTTPClient is a shared HTTP client with sensible timeouts for service calls.
+var retryHTTPClient = &http.Client{
+	Timeout: 10 * time.Second,
+	Transport: &http.Transport{
+		MaxIdleConns:        20,
+		MaxIdleConnsPerHost: 10,
+		IdleConnTimeout:     30 * time.Second,
+	},
+}
+
+// retryGet performs up to 3 attempts with exponential backoff.
+func retryGet(ctx context.Context, url string) (*http.Response, error) {
+	var lastErr error
+	for i := 0; i < 3; i++ {
+		req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
+		if err != nil {
+			return nil, err
+		}
+		resp, err := retryHTTPClient.Do(req)
+		if err == nil {
+			return resp, nil
+		}
+		lastErr = err
+		if i < 2 {
+			time.Sleep(time.Duration(100*(i+1)) * time.Millisecond)
+		}
+	}
+	return nil, lastErr
+}
+
 var validEnvs = []string{"local", "gcp", "azure", "aws", "onprem", "alibaba"}
 
 // Review represents a product review (mirrors reviewservice model).
@@ -688,17 +718,12 @@ func (fe *frontendServer) getProductReviews(ctx context.Context, productID strin
 		return nil, nil
 	}
 
-	// Fetch reviews list
+	// Fetch reviews list with retry
 	reviews := &ReviewsResponse{}
 	reviewsURL := "http://" + fe.reviewSvcAddr + "/reviews?product_id=" + productID
-	reviewsReq, err := http.NewRequestWithContext(ctx, http.MethodGet, reviewsURL, nil)
+	reviewsRes, err := retryGet(ctx, reviewsURL)
 	if err != nil {
-		log.WithError(err).Warn("failed to create reviews request")
-		return nil, nil
-	}
-	reviewsRes, err := http.DefaultClient.Do(reviewsReq)
-	if err != nil {
-		log.WithError(err).Warn("failed to fetch reviews")
+		log.WithError(err).Warn("failed to fetch reviews after retries")
 		return nil, nil
 	}
 	defer reviewsRes.Body.Close()
@@ -707,17 +732,17 @@ func (fe *frontendServer) getProductReviews(ctx context.Context, productID strin
 		return nil, nil
 	}
 
-	// Fetch review stats
+	log.WithFields(logrus.Fields{
+		"product_id":             productID,
+		"reviews_count_from_svc": len(reviews.Reviews),
+	}).Info("getProductReviews: fetched reviews list")
+
+	// Fetch review stats with retry
 	stats := &ReviewStats{}
 	statsURL := "http://" + fe.reviewSvcAddr + "/reviews/stats?product_id=" + productID
-	statsReq, err := http.NewRequestWithContext(ctx, http.MethodGet, statsURL, nil)
+	statsRes, err := retryGet(ctx, statsURL)
 	if err != nil {
-		log.WithError(err).Warn("failed to create review stats request")
-		return reviews.Reviews, nil
-	}
-	statsRes, err := http.DefaultClient.Do(statsReq)
-	if err != nil {
-		log.WithError(err).Warn("failed to fetch review stats")
+		log.WithError(err).Warn("failed to fetch review stats after retries")
 		return reviews.Reviews, nil
 	}
 	defer statsRes.Body.Close()
@@ -725,6 +750,12 @@ func (fe *frontendServer) getProductReviews(ctx context.Context, productID strin
 		log.WithError(err).Warn("failed to decode review stats response")
 		return reviews.Reviews, nil
 	}
+
+	log.WithFields(logrus.Fields{
+		"product_id":    productID,
+		"total_reviews": stats.TotalReviews,
+		"avg_rating":    stats.AverageRating,
+	}).Info("getProductReviews: fetched stats")
 
 	return reviews.Reviews, stats
 }
@@ -772,11 +803,36 @@ func (fe *frontendServer) getReviewsHandler(w http.ResponseWriter, r *http.Reque
 
 	reviews, stats := fe.getProductReviews(r.Context(), productID)
 
-	if err := templates.ExecuteTemplate(w, "reviews", injectCommonTemplateData(r, map[string]interface{}{
+	reviewCount := 0
+	if reviews != nil {
+		reviewCount = len(reviews)
+	}
+
+	var buf bytes.Buffer
+	if err := templates.ExecuteTemplate(&buf, "reviews", injectCommonTemplateData(r, map[string]interface{}{
 		"reviews":      reviews,
 		"review_stats": stats,
 		"product_id":   productID,
 	})); err != nil {
 		log.Println(err)
+		return
+	}
+
+	log.WithFields(logrus.Fields{
+		"product_id":    productID,
+		"review_count":  reviewCount,
+		"has_stats":     stats != nil,
+		"response_len":  buf.Len(),
+	}).Info("getReviewsHandler rendered")
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Set("Content-Length", strconv.Itoa(buf.Len()))
+	w.Header().Set("Connection", "close")
+	w.WriteHeader(http.StatusOK)
+	if _, err := io.Copy(w, &buf); err != nil {
+		log.WithError(err).Warn("getReviewsHandler: write failed")
+	}
+	if flusher, ok := w.(http.Flusher); ok {
+		flusher.Flush()
 	}
 }

@@ -1,0 +1,2 @@
+jmeter_exit_code=0
+summary_exit_code=0

@@ -20,6 +20,7 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
+	"github.com/sirupsen/logrus"
 )
 
 func (s *server) healthHandler(w http.ResponseWriter, r *http.Request) {
@@ -76,6 +77,7 @@ func (s *server) getReviewsHandler(w http.ResponseWriter, r *http.Request) {
 	log := s.log.WithField("handler", "getReviews")
 	productID := r.URL.Query().Get("product_id")
 	if productID == "" {
+		log.Warn("missing product_id query parameter")
 		writeError(w, http.StatusBadRequest, "product_id query parameter is required")
 		return
 	}
@@ -86,6 +88,11 @@ func (s *server) getReviewsHandler(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusInternalServerError, "failed to get reviews")
 		return
 	}
+
+	log.WithFields(logrus.Fields{
+		"product_id":   productID,
+		"review_count": len(reviews),
+	}).Info("getReviews response")
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string]interface{}{
@@ -138,6 +145,7 @@ func (s *server) getReviewStatsHandler(w http.ResponseWriter, r *http.Request) {
 	log := s.log.WithField("handler", "getReviewStats")
 	productID := r.URL.Query().Get("product_id")
 	if productID == "" {
+		log.Warn("missing product_id query parameter for stats")
 		writeError(w, http.StatusBadRequest, "product_id query parameter is required")
 		return
 	}
@@ -148,6 +156,12 @@ func (s *server) getReviewStatsHandler(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusInternalServerError, "failed to get review stats")
 		return
 	}
+
+	log.WithFields(logrus.Fields{
+		"product_id":    productID,
+		"total_reviews": stats.TotalReviews,
+		"avg_rating":    stats.AverageRating,
+	}).Info("getReviewStats response")
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(stats)

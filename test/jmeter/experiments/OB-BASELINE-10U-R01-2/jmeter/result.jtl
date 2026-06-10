@@ -1,0 +1,535 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1780997184317,26,UTIL_Healthz,200,OK,Online Boutique Users 1-1,text,true,,200,181,1,1,http://127.0.0.1:8080/_healthz,26,0,16
+1780997185194,13,UTIL_Healthz,200,OK,Online Boutique Users 1-2,text,true,,200,181,2,2,http://127.0.0.1:8080/_healthz,13,0,0
+1780997186190,15,UTIL_Healthz,200,OK,Online Boutique Users 1-3,text,true,,200,181,3,3,http://127.0.0.1:8080/_healthz,15,0,0
+1780997187186,7,UTIL_Healthz,200,OK,Online Boutique Users 1-4,text,true,,200,181,4,4,http://127.0.0.1:8080/_healthz,7,0,1
+1780997188183,9,UTIL_Healthz,200,OK,Online Boutique Users 1-5,text,true,,200,181,5,5,http://127.0.0.1:8080/_healthz,9,0,0
+1780997189182,19,UTIL_Healthz,200,OK,Online Boutique Users 1-6,text,true,,200,181,6,6,http://127.0.0.1:8080/_healthz,18,0,2
+1780997189213,19,T01_Home,200,OK,Online Boutique Users 1-2,text,true,,10553,235,6,6,http://127.0.0.1:8080/,19,0,0
+1780997190003,103,T01_Home,200,OK,Online Boutique Users 1-3,text,true,,10553,235,6,6,http://127.0.0.1:8080/,103,0,0
+1780997190179,10,UTIL_Healthz,200,OK,Online Boutique Users 1-7,text,true,,200,181,7,7,http://127.0.0.1:8080/_healthz,10,0,1
+1780997191178,12,UTIL_Healthz,200,OK,Online Boutique Users 1-8,text,true,,200,181,8,8,http://127.0.0.1:8080/_healthz,12,0,1
+1780997191260,20,T01_Home,200,OK,Online Boutique Users 1-1,text,true,,10553,235,8,8,http://127.0.0.1:8080/,20,0,0
+1780997192176,8,UTIL_Healthz,200,OK,Online Boutique Users 1-9,text,true,,200,181,9,9,http://127.0.0.1:8080/_healthz,8,0,0
+1780997192833,15,T01_Home,200,OK,Online Boutique Users 1-5,text,true,,10553,235,9,9,http://127.0.0.1:8080/,15,0,0
+1780997193177,18,UTIL_Healthz,200,OK,Online Boutique Users 1-10,text,true,,200,181,10,10,http://127.0.0.1:8080/_healthz,18,0,2
+1780997193568,39,T01_Home,200,OK,Online Boutique Users 1-4,text,true,,10553,235,10,10,http://127.0.0.1:8080/,38,0,0
+1780997195104,18,T01_Home,200,OK,Online Boutique Users 1-6,text,true,,10553,235,10,10,http://127.0.0.1:8080/,18,0,0
+1780997195188,12,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-2,text,true,,12377,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,12,0,0
+1780997195831,110,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-3,text,false,Page content assertion failed: T02 missing product id 1YMWWN1N4O,12363,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,110,0,0
+1780997196491,28,T01_Home,200,OK,Online Boutique Users 1-7,text,true,,10553,235,10,10,http://127.0.0.1:8080/,28,0,0
+1780997198120,31,T01_Home,200,OK,Online Boutique Users 1-9,text,true,,10553,235,10,10,http://127.0.0.1:8080/,31,0,0
+1780997198549,21,T01_Home,200,OK,Online Boutique Users 1-8,text,true,,10553,235,10,10,http://127.0.0.1:8080/,21,0,0
+1780997198608,17,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-4,text,true,,12383,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,17,0,0
+1780997198650,13,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-1,text,false,Page content assertion failed: T02 missing product id OLJCESPC7Z,12377,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,13,0,0
+1780997199565,40,T01_Home,200,OK,Online Boutique Users 1-10,text,true,,10553,235,10,10,http://127.0.0.1:8080/,40,0,0
+1780997199654,15,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-5,text,true,,12327,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,15,0,0
+1780997200273,14,T03_Add_To_Cart,302,Found,Online Boutique Users 1-2,,true,,95,356,10,10,http://127.0.0.1:8080/cart,14,0,0
+1780997201180,15,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-6,text,false,Page content assertion failed: T02 missing product id 0PUK6V6EV0,12397,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,15,0,0
+1780997203653,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-4,,true,,95,356,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997203817,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-7,text,true,,12363,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,22,0,0
+1780997204296,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-3,,true,,95,356,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997205088,13,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-8,text,false,Page content assertion failed: T02 missing product id 9SIQT8TOJO,12377,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,12,0,0
+1780997205635,12,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-10,text,true,,12351,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,11,0,0
+1780997205770,15,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-9,text,true,,12361,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,15,0,0
+1780997205817,13,T03_Add_To_Cart,302,Found,Online Boutique Users 1-1,,true,,95,356,10,10,http://127.0.0.1:8080/cart,13,0,0
+1780997205967,25,T04_View_Cart,200,OK,Online Boutique Users 1-2,text,true,,16554,239,10,10,http://127.0.0.1:8080/cart,25,0,0
+1780997206824,8,T03_Add_To_Cart,302,Found,Online Boutique Users 1-5,,true,,95,356,10,10,http://127.0.0.1:8080/cart,8,0,0
+1780997207473,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-6,,true,,95,356,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997208208,21,T04_View_Cart,200,OK,Online Boutique Users 1-4,text,true,,16578,239,10,10,http://127.0.0.1:8080/cart,21,0,0
+1780997211124,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-8,,true,,95,356,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997211192,18,T04_View_Cart,200,OK,Online Boutique Users 1-1,text,true,,16550,239,10,10,http://127.0.0.1:8080/cart,18,0,0
+1780997211212,12,T04_View_Cart,200,OK,Online Boutique Users 1-3,text,true,,16558,239,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997211348,8,T03_Add_To_Cart,302,Found,Online Boutique Users 1-7,,true,,95,356,10,10,http://127.0.0.1:8080/cart,8,0,0
+1780997211996,10,T03_Add_To_Cart,302,Found,Online Boutique Users 1-9,,true,,95,356,10,10,http://127.0.0.1:8080/cart,10,0,0
+1780997212305,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-10,,true,,95,356,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997212432,34,T05_Change_Currency,200,OK,Online Boutique Users 1-2,text,true,,10811,602,10,10,http://127.0.0.1:8080/,7,0,0
+1780997212432,7,T05_Change_Currency-0,302,Found,Online Boutique Users 1-2,,true,,138,348,10,10,http://127.0.0.1:8080/setCurrency,7,0,0
+1780997212441,25,T05_Change_Currency-1,200,OK,Online Boutique Users 1-2,text,true,,10673,254,10,10,http://127.0.0.1:8080/,25,0,0
+1780997212710,60,T09_Checkout,200,OK,Online Boutique Users 1-4,text,true,,6915,624,10,10,http://127.0.0.1:8080/cart/checkout,60,0,0
+1780997213485,17,T04_View_Cart,200,OK,Online Boutique Users 1-5,text,true,,16594,239,10,10,http://127.0.0.1:8080/cart,16,0,0
+1780997214149,14,T04_View_Cart,200,OK,Online Boutique Users 1-6,text,true,,16546,239,10,10,http://127.0.0.1:8080/cart,14,0,0
+1780997216684,20,T04_View_Cart,200,OK,Online Boutique Users 1-9,text,true,,16587,239,10,10,http://127.0.0.1:8080/cart,19,0,0
+1780997217837,16,T04_View_Cart,200,OK,Online Boutique Users 1-7,text,true,,16568,239,10,10,http://127.0.0.1:8080/cart,16,0,0
+1780997217841,26,T01_Home,200,OK,Online Boutique Users 1-3,text,true,,10642,235,10,10,http://127.0.0.1:8080/,25,0,0
+1780997217962,23,T01_Home,200,OK,Online Boutique Users 1-2,text,true,,10673,254,10,10,http://127.0.0.1:8080/,23,0,0
+1780997218459,17,T04_View_Cart,200,OK,Online Boutique Users 1-10,text,true,,16594,239,10,10,http://127.0.0.1:8080/cart,16,0,0
+1780997218850,13,T04_View_Cart,200,OK,Online Boutique Users 1-8,text,true,,16589,239,10,10,http://127.0.0.1:8080/cart,13,0,0
+1780997218948,35,T01_Home,200,OK,Online Boutique Users 1-1,text,true,,10642,235,10,10,http://127.0.0.1:8080/,35,0,0
+1780997219361,28,T01_Home,200,OK,Online Boutique Users 1-4,text,true,,10553,235,10,10,http://127.0.0.1:8080/,28,0,0
+1780997219556,30,T01_Home,200,OK,Online Boutique Users 1-5,text,true,,10642,235,10,10,http://127.0.0.1:8080/,30,0,0
+1780997221472,27,T01_Home,200,OK,Online Boutique Users 1-6,text,true,,10642,235,10,10,http://127.0.0.1:8080/,27,0,0
+1780997222649,21,T09_Checkout,200,OK,Online Boutique Users 1-8,text,true,,6913,624,10,10,http://127.0.0.1:8080/cart/checkout,21,0,0
+1780997223227,37,T01_Home,200,OK,Online Boutique Users 1-9,text,true,,10642,235,10,10,http://127.0.0.1:8080/,37,0,0
+1780997223232,32,T01_Home,200,OK,Online Boutique Users 1-7,text,true,,10642,235,10,10,http://127.0.0.1:8080/,32,0,0
+1780997223918,23,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-2,text,true,,12453,272,10,10,http://127.0.0.1:8080/product/L9ECAV7KIM,23,0,0
+1780997224754,23,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-3,text,false,Page content assertion failed: T02 missing product id 1YMWWN1N4O,12444,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,22,0,0
+1780997225017,11,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-1,text,true,,12424,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,11,0,0
+1780997225659,23,T09_Checkout,200,OK,Online Boutique Users 1-10,text,true,,6903,624,10,10,http://127.0.0.1:8080/cart/checkout,23,0,0
+1780997225987,24,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-5,text,true,,12428,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,24,0,0
+1780997226249,25,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-4,text,false,Page content assertion failed: T02 missing product id 2ZYFJ3GM2N,12399,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,25,0,0
+1780997226415,23,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-6,text,true,,12469,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,23,0,0
+1780997228860,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-7,text,false,Page content assertion failed: T02 missing product id 6E92ZMYYFZ,12430,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,22,0,0
+1780997229038,26,T01_Home,200,OK,Online Boutique Users 1-8,text,true,,10553,235,10,10,http://127.0.0.1:8080/,26,0,0
+1780997230448,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-3,,true,,95,356,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997230499,9,T03_Add_To_Cart,302,Found,Online Boutique Users 1-6,,true,,95,356,10,10,http://127.0.0.1:8080/cart,9,0,0
+1780997230558,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-2,,true,,95,375,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997230938,13,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-9,text,true,,12486,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,13,0,0
+1780997231106,21,T01_Home,200,OK,Online Boutique Users 1-10,text,true,,10553,235,10,10,http://127.0.0.1:8080/,21,0,0
+1780997231394,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-4,,true,,95,356,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997231623,8,T03_Add_To_Cart,302,Found,Online Boutique Users 1-1,,true,,95,356,10,10,http://127.0.0.1:8080/cart,8,0,0
+1780997232201,13,T03_Add_To_Cart,302,Found,Online Boutique Users 1-5,,true,,95,356,10,10,http://127.0.0.1:8080/cart,13,0,0
+1780997234275,22,T04_View_Cart,200,OK,Online Boutique Users 1-6,text,true,,18028,239,10,10,http://127.0.0.1:8080/cart,22,0,0
+1780997234514,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-7,,true,,95,356,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997235094,23,T04_View_Cart,200,OK,Online Boutique Users 1-2,text,true,,18018,258,10,10,http://127.0.0.1:8080/cart,22,0,0
+1780997235202,27,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-8,text,false,Page content assertion failed: T02 missing product id OLJCESPC7Z,12391,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,27,0,0
+1780997235926,17,T04_View_Cart,200,OK,Online Boutique Users 1-1,text,true,,17982,239,10,10,http://127.0.0.1:8080/cart,17,0,0
+1780997236209,24,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-10,text,true,,12377,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,24,0,0
+1780997237856,13,T04_View_Cart,200,OK,Online Boutique Users 1-5,text,true,,18004,239,10,10,http://127.0.0.1:8080/cart,13,0,0
+1780997237975,11,T04_View_Cart,200,OK,Online Boutique Users 1-3,text,false,Page content assertion failed: T04 missing Quantity: 1,16542,239,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997238040,5,T03_Add_To_Cart,302,Found,Online Boutique Users 1-9,,true,,95,356,10,10,http://127.0.0.1:8080/cart,5,0,0
+1780997238243,14,T04_View_Cart,200,OK,Online Boutique Users 1-4,text,true,,16580,239,10,10,http://127.0.0.1:8080/cart,14,0,0
+1780997240085,14,T04_View_Cart,200,OK,Online Boutique Users 1-7,text,true,,18007,239,10,10,http://127.0.0.1:8080/cart,14,0,0
+1780997241128,24,T05_Change_Currency,200,OK,Online Boutique Users 1-6,text,true,,10811,602,10,10,http://127.0.0.1:8080/,5,0,0
+1780997241128,5,T05_Change_Currency-0,302,Found,Online Boutique Users 1-6,,true,,138,348,10,10,http://127.0.0.1:8080/setCurrency,5,0,0
+1780997241133,19,T05_Change_Currency-1,200,OK,Online Boutique Users 1-6,text,true,,10673,254,10,10,http://127.0.0.1:8080/,19,0,0
+1780997241772,30,T01_Home,200,OK,Online Boutique Users 1-1,text,true,,10642,235,10,10,http://127.0.0.1:8080/,30,0,0
+1780997242140,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-8,,true,,95,356,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997243028,28,T01_Home,200,OK,Online Boutique Users 1-5,text,true,,10642,235,10,10,http://127.0.0.1:8080/,28,0,0
+1780997243091,23,T01_Home,200,OK,Online Boutique Users 1-2,text,true,,10673,254,10,10,http://127.0.0.1:8080/,23,0,0
+1780997243304,9,T03_Add_To_Cart,302,Found,Online Boutique Users 1-10,,true,,95,356,10,10,http://127.0.0.1:8080/cart,9,0,0
+1780997243675,17,T01_Home,200,OK,Online Boutique Users 1-4,text,true,,10642,235,10,10,http://127.0.0.1:8080/,17,0,0
+1780997244374,11,T04_View_Cart,200,OK,Online Boutique Users 1-9,text,true,,17984,239,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997244957,19,T09_Checkout,200,OK,Online Boutique Users 1-3,text,true,,6888,624,10,10,http://127.0.0.1:8080/cart/checkout,19,0,0
+1780997247081,26,T05_Change_Currency,200,OK,Online Boutique Users 1-7,text,true,,10811,602,10,10,http://127.0.0.1:8080/,7,0,0
+1780997247081,7,T05_Change_Currency-0,302,Found,Online Boutique Users 1-7,,true,,138,348,10,10,http://127.0.0.1:8080/setCurrency,7,0,0
+1780997247089,18,T05_Change_Currency-1,200,OK,Online Boutique Users 1-7,text,true,,10673,254,10,10,http://127.0.0.1:8080/,18,0,0
+1780997247456,45,T06_Submit_Review,201,Created,Online Boutique Users 1-6,text,true,,477,578,10,10,http://127.0.0.1:8080/reviews,45,0,0
+1780997248595,42,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-5,text,true,,12446,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,42,0,4
+1780997248930,32,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-2,text,true,,12498,272,10,10,http://127.0.0.1:8080/product/1YMWWN1N4O,32,0,3
+1780997249233,27,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-1,text,false,Page content assertion failed: T02 missing product id L9ECAV7KIM,12475,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,27,0,2
+1780997249423,28,T09_Checkout,200,OK,Online Boutique Users 1-9,text,true,,6895,624,10,10,http://127.0.0.1:8080/cart/checkout,28,0,0
+1780997249543,23,T04_View_Cart,200,OK,Online Boutique Users 1-8,text,true,,16556,239,10,10,http://127.0.0.1:8080/cart,23,0,0
+1780997250128,27,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-4,text,false,Page content assertion failed: T02 missing product id 0PUK6V6EV0,12452,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,27,0,1
+1780997251159,21,T04_View_Cart,200,OK,Online Boutique Users 1-10,text,true,,16600,239,10,10,http://127.0.0.1:8080/cart,20,0,0
+1780997251949,156,T01_Home,200,OK,Online Boutique Users 1-7,text,true,,10673,254,10,10,http://127.0.0.1:8080/,155,0,2
+1780997252212,38,T01_Home,200,OK,Online Boutique Users 1-3,text,true,,10553,235,10,10,http://127.0.0.1:8080/,38,0,1
+1780997253005,25,T07_Verify_Review_Fragment,200,OK,Online Boutique Users 1-6,text,false,"Page content assertion failed: T07 missing review_title, review_user_name, review_content",1562,272,10,10,http://127.0.0.1:8080/reviews/66VCHSJNUP,25,0,2
+1780997254317,7,T03_Add_To_Cart,302,Found,Online Boutique Users 1-5,,true,,95,356,10,10,http://127.0.0.1:8080/cart,7,0,0
+1780997254779,20,T01_Home,200,OK,Online Boutique Users 1-9,text,true,,10553,235,10,10,http://127.0.0.1:8080/,20,0,1
+1780997255032,7,T03_Add_To_Cart,302,Found,Online Boutique Users 1-2,,true,,95,375,10,10,http://127.0.0.1:8080/cart,7,0,0
+1780997255189,6,T03_Add_To_Cart,302,Found,Online Boutique Users 1-1,,true,,95,356,10,10,http://127.0.0.1:8080/cart,6,0,0
+1780997255505,18,T09_Checkout,200,OK,Online Boutique Users 1-8,text,true,,6889,624,10,10,http://127.0.0.1:8080/cart/checkout,18,0,1
+1780997256559,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-4,,true,,95,356,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997257403,32,T05_Change_Currency,200,OK,Online Boutique Users 1-10,text,true,,10811,602,10,10,http://127.0.0.1:8080/,14,0,1
+1780997257403,14,T05_Change_Currency-0,302,Found,Online Boutique Users 1-10,,true,,138,348,10,10,http://127.0.0.1:8080/setCurrency,14,0,1
+1780997257418,17,T05_Change_Currency-1,200,OK,Online Boutique Users 1-10,text,true,,10673,254,10,10,http://127.0.0.1:8080/,16,0,0
+1780997258192,14,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-3,text,false,Page content assertion failed: T02 missing product id LS4PSXUNUM,12351,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,14,0,0
+1780997259288,11,T08_Verify_Review_Product_Page,200,OK,Online Boutique Users 1-6,text,false,"Page content assertion failed: T08 missing review_title, review_user_name, review_content",12473,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,11,0,0
+1780997259860,13,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-7,text,false,Page content assertion failed: T02 missing product id 9SIQT8TOJO,12467,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,13,0,0
+1780997261062,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-9,text,false,Page content assertion failed: T02 missing product id 6E92ZMYYFZ,12347,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,22,0,0
+1780997261985,23,T04_View_Cart,200,OK,Online Boutique Users 1-5,text,true,,17998,239,10,10,http://127.0.0.1:8080/cart,23,0,0
+1780997262357,14,T04_View_Cart,200,OK,Online Boutique Users 1-4,text,true,,18016,239,10,10,http://127.0.0.1:8080/cart,14,0,0
+1780997262329,76,T01_Home,200,OK,Online Boutique Users 1-8,text,true,,10553,235,10,10,http://127.0.0.1:8080/,75,0,0
+1780997262475,20,T04_View_Cart,200,OK,Online Boutique Users 1-2,text,true,,19451,258,10,10,http://127.0.0.1:8080/cart,19,0,0
+1780997262508,14,T04_View_Cart,200,OK,Online Boutique Users 1-1,text,true,,19420,239,10,10,http://127.0.0.1:8080/cart,14,0,0
+1780997263090,126,T06_Submit_Review,201,Created,Online Boutique Users 1-10,text,true,,477,578,10,10,http://127.0.0.1:8080/reviews,126,0,0
+1780997263242,9,T03_Add_To_Cart,302,Found,Online Boutique Users 1-3,,true,,95,356,10,10,http://127.0.0.1:8080/cart,9,0,0
+1780997263533,16,T09_Checkout,200,OK,Online Boutique Users 1-6,text,true,,6888,643,10,10,http://127.0.0.1:8080/cart/checkout,16,0,0
+1780997267270,13,T03_Add_To_Cart,302,Found,Online Boutique Users 1-7,,true,,95,375,10,10,http://127.0.0.1:8080/cart,13,0,0
+1780997267589,10,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-8,text,false,Page content assertion failed: T02 missing product id OLJCESPC7Z,12982,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,10,0,0
+1780997267693,14,T09_Checkout,200,OK,Online Boutique Users 1-1,text,true,,6882,624,10,10,http://127.0.0.1:8080/cart/checkout,14,0,0
+1780997267725,19,T06_Submit_Review,201,Created,Online Boutique Users 1-2,text,true,,477,578,10,10,http://127.0.0.1:8080/reviews,19,0,0
+1780997267761,2,T07_Verify_Review_Fragment,200,OK,Online Boutique Users 1-10,text,true,,2122,272,10,10,http://127.0.0.1:8080/reviews/66VCHSJNUP,2,0,0
+1780997267877,7,T03_Add_To_Cart,302,Found,Online Boutique Users 1-9,,true,,95,356,10,10,http://127.0.0.1:8080/cart,7,0,0
+1780997268340,21,T05_Change_Currency,200,OK,Online Boutique Users 1-5,text,true,,10811,602,10,10,http://127.0.0.1:8080/,4,0,0
+1780997268340,4,T05_Change_Currency-0,302,Found,Online Boutique Users 1-5,,true,,138,348,10,10,http://127.0.0.1:8080/setCurrency,4,0,0
+1780997268344,17,T05_Change_Currency-1,200,OK,Online Boutique Users 1-5,text,true,,10673,254,10,10,http://127.0.0.1:8080/,17,0,0
+1780997268935,27,T05_Change_Currency,200,OK,Online Boutique Users 1-4,text,true,,10811,602,10,10,http://127.0.0.1:8080/,8,0,0
+1780997268935,8,T05_Change_Currency-0,302,Found,Online Boutique Users 1-4,,true,,138,348,10,10,http://127.0.0.1:8080/setCurrency,8,0,0
+1780997268943,19,T05_Change_Currency-1,200,OK,Online Boutique Users 1-4,text,true,,10673,254,10,10,http://127.0.0.1:8080/,19,0,0
+1780997269183,16,T01_Home,200,OK,Online Boutique Users 1-6,text,true,,10583,254,10,10,http://127.0.0.1:8080/,16,0,0
+1780997269380,12,T04_View_Cart,200,OK,Online Boutique Users 1-3,text,true,,16578,239,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997271974,25,T01_Home,200,OK,Online Boutique Users 1-5,text,true,,10673,254,10,10,http://127.0.0.1:8080/,25,0,0
+1780997273612,6,T07_Verify_Review_Fragment,200,OK,Online Boutique Users 1-2,text,true,,2122,272,10,10,http://127.0.0.1:8080/reviews/1YMWWN1N4O,6,0,0
+1780997273747,23,T01_Home,200,OK,Online Boutique Users 1-1,text,true,,10553,235,10,10,http://127.0.0.1:8080/,23,0,0
+1780997273908,15,T04_View_Cart,200,OK,Online Boutique Users 1-7,text,true,,19449,258,10,10,http://127.0.0.1:8080/cart,15,0,0
+1780997274009,19,T09_Checkout,200,OK,Online Boutique Users 1-3,text,true,,6919,624,10,10,http://127.0.0.1:8080/cart/checkout,19,0,0
+1780997274887,8,T03_Add_To_Cart,302,Found,Online Boutique Users 1-8,,true,,95,356,10,10,http://127.0.0.1:8080/cart,8,0,0
+1780997275111,11,T08_Verify_Review_Product_Page,200,OK,Online Boutique Users 1-10,text,true,,13067,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,11,0,0
+1780997275715,11,T04_View_Cart,200,OK,Online Boutique Users 1-9,text,true,,16571,239,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997276225,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-6,text,true,,12936,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,21,0,0
+1780997276669,18,T01_Home,200,OK,Online Boutique Users 1-4,text,true,,10673,254,10,10,http://127.0.0.1:8080/,18,0,0
+1780997278530,11,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-5,text,false,Page content assertion failed: T02 missing product id L9ECAV7KIM,13059,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,11,0,0
+1780997279075,18,T04_View_Cart,200,OK,Online Boutique Users 1-8,text,true,,16578,239,10,10,http://127.0.0.1:8080/cart,18,0,0
+1780997279273,20,T08_Verify_Review_Product_Page,200,OK,Online Boutique Users 1-2,text,true,,13101,272,10,10,http://127.0.0.1:8080/product/1YMWWN1N4O,20,0,0
+1780997280250,30,T01_Home,200,OK,Online Boutique Users 1-7,text,true,,10673,254,10,10,http://127.0.0.1:8080/,30,0,0
+1780997280300,12,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-1,text,false,Page content assertion failed: T02 missing product id 1YMWWN1N4O,12982,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,11,0,0
+1780997280469,27,T01_Home,200,OK,Online Boutique Users 1-10,text,true,,10673,254,10,10,http://127.0.0.1:8080/,27,0,0
+1780997280900,27,T01_Home,200,OK,Online Boutique Users 1-3,text,true,,10553,235,10,10,http://127.0.0.1:8080/,27,0,0
+1780997281372,13,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-4,text,true,,13029,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,13,0,0
+1780997282620,7,T03_Add_To_Cart,302,Found,Online Boutique Users 1-6,,true,,95,375,10,10,http://127.0.0.1:8080/cart,7,0,0
+1780997282617,28,T01_Home,200,OK,Online Boutique Users 1-9,text,true,,10642,235,10,10,http://127.0.0.1:8080/,27,0,0
+1780997284350,15,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-7,text,true,,13045,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,15,0,0
+1780997284444,29,T01_Home,200,OK,Online Boutique Users 1-2,text,true,,10673,254,10,10,http://127.0.0.1:8080/,28,0,0
+1780997284896,54,T01_Home,200,OK,Online Boutique Users 1-8,text,true,,10642,235,10,10,http://127.0.0.1:8080/,54,0,0
+1780997285377,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-5,,true,,95,375,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997286156,18,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-3,text,false,Page content assertion failed: T02 missing product id LS4PSXUNUM,12954,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,18,0,0
+1780997286496,21,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-10,text,true,,13083,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,21,0,0
+1780997287738,8,T03_Add_To_Cart,302,Found,Online Boutique Users 1-1,,true,,95,356,10,10,http://127.0.0.1:8080/cart,8,0,0
+1780997288123,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-4,,true,,95,375,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997288296,24,T04_View_Cart,200,OK,Online Boutique Users 1-6,text,true,,16601,258,10,10,http://127.0.0.1:8080/cart,24,0,0
+1780997289871,9,T03_Add_To_Cart,302,Found,Online Boutique Users 1-7,,true,,95,375,10,10,http://127.0.0.1:8080/cart,9,0,0
+1780997289998,21,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-9,text,false,Page content assertion failed: T02 missing product id 6E92ZMYYFZ,13033,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,21,0,0
+1780997290769,19,T04_View_Cart,200,OK,Online Boutique Users 1-5,text,true,,19470,258,10,10,http://127.0.0.1:8080/cart,18,0,0
+1780997291514,11,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-2,text,true,,13049,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,11,0,0
+1780997292617,18,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-8,text,false,Page content assertion failed: T02 missing product id OLJCESPC7Z,13059,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,18,0,0
+1780997293053,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-3,,true,,95,356,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997293542,10,T04_View_Cart,200,OK,Online Boutique Users 1-1,text,true,,16548,239,10,10,http://127.0.0.1:8080/cart,10,0,0
+1780997293831,31,T05_Change_Currency,200,OK,Online Boutique Users 1-6,text,true,,10811,621,10,10,http://127.0.0.1:8080/,10,0,0
+1780997293831,10,T05_Change_Currency-0,302,Found,Online Boutique Users 1-6,,true,,138,367,10,10,http://127.0.0.1:8080/setCurrency,10,0,0
+1780997293841,21,T05_Change_Currency-1,200,OK,Online Boutique Users 1-6,text,true,,10673,254,10,10,http://127.0.0.1:8080/,21,0,0
+1780997293935,23,T04_View_Cart,200,OK,Online Boutique Users 1-7,text,true,,20890,258,10,10,http://127.0.0.1:8080/cart,22,0,0
+1780997294562,17,T04_View_Cart,200,OK,Online Boutique Users 1-4,text,true,,18010,258,10,10,http://127.0.0.1:8080/cart,17,0,0
+1780997294610,7,T03_Add_To_Cart,302,Found,Online Boutique Users 1-10,,true,,95,375,10,10,http://127.0.0.1:8080/cart,7,0,0
+1780997297726,6,T03_Add_To_Cart,302,Found,Online Boutique Users 1-8,,true,,95,356,10,10,http://127.0.0.1:8080/cart,6,0,0
+1780997297940,13,T03_Add_To_Cart,302,Found,Online Boutique Users 1-9,,true,,95,356,10,10,http://127.0.0.1:8080/cart,13,0,0
+1780997297971,9,T03_Add_To_Cart,302,Found,Online Boutique Users 1-2,,true,,95,375,10,10,http://127.0.0.1:8080/cart,9,0,0
+1780997298572,27,T01_Home,200,OK,Online Boutique Users 1-5,text,true,,10673,254,10,10,http://127.0.0.1:8080/,27,0,0
+1780997298667,10,T04_View_Cart,200,OK,Online Boutique Users 1-3,text,true,,16596,239,10,10,http://127.0.0.1:8080/cart,10,0,0
+1780997298924,26,T09_Checkout,200,OK,Online Boutique Users 1-7,text,true,,6914,643,10,10,http://127.0.0.1:8080/cart/checkout,26,0,0
+1780997299229,36,T06_Submit_Review,201,Created,Online Boutique Users 1-6,text,true,,477,578,10,10,http://127.0.0.1:8080/reviews,36,0,0
+1780997299918,16,T09_Checkout,200,OK,Online Boutique Users 1-4,text,true,,6934,643,10,10,http://127.0.0.1:8080/cart/checkout,16,0,0
+1780997300653,27,T01_Home,200,OK,Online Boutique Users 1-1,text,true,,10642,235,10,10,http://127.0.0.1:8080/,27,0,0
+1780997300671,13,T04_View_Cart,200,OK,Online Boutique Users 1-10,text,true,,18037,258,10,10,http://127.0.0.1:8080/cart,13,0,0
+1780997302903,21,T01_Home,200,OK,Online Boutique Users 1-3,text,true,,10642,235,10,10,http://127.0.0.1:8080/,21,0,0
+1780997303915,22,T04_View_Cart,200,OK,Online Boutique Users 1-2,text,true,,19473,258,10,10,http://127.0.0.1:8080/cart,21,0,0
+1780997304517,22,T01_Home,200,OK,Online Boutique Users 1-7,text,true,,10583,254,10,10,http://127.0.0.1:8080/,21,0,0
+1780997304833,12,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-5,text,false,Page content assertion failed: T02 missing product id 1YMWWN1N4O,13631,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,12,0,0
+1780997305331,23,T01_Home,200,OK,Online Boutique Users 1-4,text,true,,10583,254,10,10,http://127.0.0.1:8080/,23,0,0
+1780997305344,12,T04_View_Cart,200,OK,Online Boutique Users 1-8,text,false,Page content assertion failed: T04 missing Quantity: 1,16548,239,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997305466,22,T04_View_Cart,200,OK,Online Boutique Users 1-9,text,false,Page content assertion failed: T04 missing Quantity: 1,16564,239,10,10,http://127.0.0.1:8080/cart,22,0,0
+1780997306122,23,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-1,text,true,,13621,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,23,0,0
+1780997306718,10,T07_Verify_Review_Fragment,200,OK,Online Boutique Users 1-6,text,true,,2707,272,10,10,http://127.0.0.1:8080/reviews/66VCHSJNUP,10,0,0
+1780997306822,28,T09_Checkout,200,OK,Online Boutique Users 1-10,text,true,,6910,643,10,10,http://127.0.0.1:8080/cart/checkout,27,0,0
+1780997307652,9,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-3,text,true,,13603,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,9,0,0
+1780997309873,15,T09_Checkout,200,OK,Online Boutique Users 1-9,text,true,,6877,624,10,10,http://127.0.0.1:8080/cart/checkout,15,0,0
+1780997310131,30,T09_Checkout,200,OK,Online Boutique Users 1-2,text,true,,6929,643,10,10,http://127.0.0.1:8080/cart/checkout,30,0,2
+1780997310511,20,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-7,text,true,,13584,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,20,0,0
+1780997310673,17,T03_Add_To_Cart,302,Found,Online Boutique Users 1-5,,true,,95,375,10,10,http://127.0.0.1:8080/cart,17,0,2
+1780997311408,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-1,,true,,95,356,10,10,http://127.0.0.1:8080/cart,12,0,1
+1780997311417,12,T09_Checkout,200,OK,Online Boutique Users 1-8,text,true,,6931,624,10,10,http://127.0.0.1:8080/cart/checkout,12,0,0
+1780997311830,36,T01_Home,200,OK,Online Boutique Users 1-10,text,true,,10583,254,10,10,http://127.0.0.1:8080/,36,0,0
+1780997311998,19,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-4,text,true,,13562,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,19,0,1
+1780997312892,21,T08_Verify_Review_Product_Page,200,OK,Online Boutique Users 1-6,text,true,,13617,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,21,0,0
+1780997313289,10,T03_Add_To_Cart,302,Found,Online Boutique Users 1-3,,true,,95,356,10,10,http://127.0.0.1:8080/cart,10,0,1
+1780997315639,21,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-10,text,false,Page content assertion failed: T02 missing product id 9SIQT8TOJO,13536,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,20,0,0
+1780997316089,14,T04_View_Cart,200,OK,Online Boutique Users 1-5,text,true,,20864,258,10,10,http://127.0.0.1:8080/cart,14,0,0
+1780997316204,24,T01_Home,200,OK,Online Boutique Users 1-9,text,true,,10553,235,10,10,http://127.0.0.1:8080/,24,0,2
+1780997316815,21,T04_View_Cart,200,OK,Online Boutique Users 1-1,text,true,,17994,239,10,10,http://127.0.0.1:8080/cart,21,0,0
+1780997316986,34,T01_Home,200,OK,Online Boutique Users 1-8,text,true,,10553,235,10,10,http://127.0.0.1:8080/,34,0,1
+1780997317014,14,T01_Home,200,OK,Online Boutique Users 1-2,text,true,,10583,254,10,10,http://127.0.0.1:8080/,14,0,0
+1780997317631,19,T03_Add_To_Cart,302,Found,Online Boutique Users 1-7,,true,,95,375,10,10,http://127.0.0.1:8080/cart,19,0,0
+1780997317723,5,T03_Add_To_Cart,302,Found,Online Boutique Users 1-4,,true,,95,375,10,10,http://127.0.0.1:8080/cart,5,0,0
+1780997318074,30,T01_Home,200,OK,Online Boutique Users 1-6,text,true,,10673,254,10,10,http://127.0.0.1:8080/,30,0,2
+1780997319113,21,T04_View_Cart,200,OK,Online Boutique Users 1-3,text,true,,18030,239,10,10,http://127.0.0.1:8080/cart,21,0,0
+1780997321181,13,T03_Add_To_Cart,302,Found,Online Boutique Users 1-10,,true,,95,375,10,10,http://127.0.0.1:8080/cart,13,0,2
+1780997321807,38,T06_Submit_Review,201,Created,Online Boutique Users 1-1,text,true,,476,559,10,10,http://127.0.0.1:8080/reviews,38,0,0
+1780997322412,10,T04_View_Cart,200,OK,Online Boutique Users 1-4,text,true,,16611,258,10,10,http://127.0.0.1:8080/cart,10,0,0
+1780997322527,21,T05_Change_Currency,200,OK,Online Boutique Users 1-5,text,true,,10811,621,10,10,http://127.0.0.1:8080/,4,0,0
+1780997322527,4,T05_Change_Currency-0,302,Found,Online Boutique Users 1-5,,true,,138,367,10,10,http://127.0.0.1:8080/setCurrency,4,0,0
+1780997322532,16,T05_Change_Currency-1,200,OK,Online Boutique Users 1-5,text,true,,10673,254,10,10,http://127.0.0.1:8080/,16,0,0
+1780997322677,11,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-9,text,false,Page content assertion failed: T02 missing product id 6E92ZMYYFZ,13546,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,11,0,0
+1780997322757,12,T04_View_Cart,200,OK,Online Boutique Users 1-7,text,true,,16579,258,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997323276,11,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-8,text,true,,13560,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,11,0,0
+1780997323742,16,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-6,text,false,Page content assertion failed: T02 missing product id 1YMWWN1N4O,13639,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,16,0,0
+1780997323870,15,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-2,text,true,,13221,272,10,10,http://127.0.0.1:8080/product/OLJCESPC7Z,15,0,0
+1780997324072,24,T05_Change_Currency,200,OK,Online Boutique Users 1-3,text,true,,10811,602,10,10,http://127.0.0.1:8080/,6,0,0
+1780997324072,6,T05_Change_Currency-0,302,Found,Online Boutique Users 1-3,,true,,138,348,10,10,http://127.0.0.1:8080/setCurrency,6,0,0
+1780997324078,18,T05_Change_Currency-1,200,OK,Online Boutique Users 1-3,text,true,,10673,254,10,10,http://127.0.0.1:8080/,17,0,0
+1780997326932,7,T07_Verify_Review_Fragment,200,OK,Online Boutique Users 1-1,text,false,"Page content assertion failed: T07 missing review_title, review_user_name, review_content",2707,253,10,10,http://127.0.0.1:8080/reviews/66VCHSJNUP,7,0,0
+1780997327968,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-8,,true,,95,356,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997328196,17,T04_View_Cart,200,OK,Online Boutique Users 1-10,text,true,,16596,258,10,10,http://127.0.0.1:8080/cart,17,0,0
+1780997328500,8,T03_Add_To_Cart,302,Found,Online Boutique Users 1-6,,true,,95,375,10,10,http://127.0.0.1:8080/cart,8,0,0
+1780997328927,42,T05_Change_Currency,200,OK,Online Boutique Users 1-7,text,true,,10811,621,10,10,http://127.0.0.1:8080/,7,0,0
+1780997328927,7,T05_Change_Currency-0,302,Found,Online Boutique Users 1-7,,true,,138,367,10,10,http://127.0.0.1:8080/setCurrency,7,0,0
+1780997328934,35,T05_Change_Currency-1,200,OK,Online Boutique Users 1-7,text,true,,10673,254,10,10,http://127.0.0.1:8080/,35,0,0
+1780997329552,23,T01_Home,200,OK,Online Boutique Users 1-4,text,true,,10673,254,10,10,http://127.0.0.1:8080/,23,0,0
+1780997330095,9,T03_Add_To_Cart,302,Found,Online Boutique Users 1-2,,true,,95,375,10,10,http://127.0.0.1:8080/cart,9,0,0
+1780997330112,8,T03_Add_To_Cart,302,Found,Online Boutique Users 1-9,,true,,95,356,10,10,http://127.0.0.1:8080/cart,8,0,0
+1780997330327,27,T09_Checkout,200,OK,Online Boutique Users 1-5,text,true,,6913,643,10,10,http://127.0.0.1:8080/cart/checkout,26,0,0
+1780997331552,54,T01_Home,200,OK,Online Boutique Users 1-3,text,true,,10673,254,10,10,http://127.0.0.1:8080/,53,0,0
+1780997332056,19,T08_Verify_Review_Product_Page,200,OK,Online Boutique Users 1-1,text,false,"Page content assertion failed: T08 missing review_title, review_user_name, review_content",13651,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,19,0,0
+1780997332925,24,T04_View_Cart,200,OK,Online Boutique Users 1-6,text,true,,18008,258,10,10,http://127.0.0.1:8080/cart,23,0,0
+1780997335061,20,T04_View_Cart,200,OK,Online Boutique Users 1-8,text,true,,16576,239,10,10,http://127.0.0.1:8080/cart,20,0,0
+1780997335281,34,T01_Home,200,OK,Online Boutique Users 1-10,text,true,,10673,254,10,10,http://127.0.0.1:8080/,34,0,0
+1780997335775,19,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-4,text,false,Page content assertion failed: T02 missing product id L9ECAV7KIM,13665,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,19,0,0
+1780997335957,19,T04_View_Cart,200,OK,Online Boutique Users 1-2,text,true,,16585,258,10,10,http://127.0.0.1:8080/cart,19,0,0
+1780997336481,21,T04_View_Cart,200,OK,Online Boutique Users 1-9,text,true,,16595,239,10,10,http://127.0.0.1:8080/cart,21,0,0
+1780997337309,29,T01_Home,200,OK,Online Boutique Users 1-5,text,true,,10583,254,10,10,http://127.0.0.1:8080/,29,0,0
+1780997337419,31,T09_Checkout,200,OK,Online Boutique Users 1-7,text,true,,6928,643,10,10,http://127.0.0.1:8080/cart/checkout,31,0,0
+1780997338492,25,T01_Home,200,OK,Online Boutique Users 1-6,text,true,,10673,254,10,10,http://127.0.0.1:8080/,25,0,0
+1780997338511,12,T01_Home,200,OK,Online Boutique Users 1-1,text,true,,10642,235,10,10,http://127.0.0.1:8080/,12,0,0
+1780997338680,12,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-3,text,true,,13643,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,12,0,0
+1780997340144,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-4,,true,,95,375,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997340342,29,T05_Change_Currency,200,OK,Online Boutique Users 1-8,text,true,,10811,602,10,10,http://127.0.0.1:8080/,6,0,0
+1780997340342,6,T05_Change_Currency-0,302,Found,Online Boutique Users 1-8,,true,,138,348,10,10,http://127.0.0.1:8080/setCurrency,6,0,0
+1780997340349,22,T05_Change_Currency-1,200,OK,Online Boutique Users 1-8,text,true,,10673,254,10,10,http://127.0.0.1:8080/,22,0,0
+1780997341579,21,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-10,text,false,Page content assertion failed: T02 missing product id 0PUK6V6EV0,13631,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,21,0,0
+1780997342484,18,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-1,text,false,Page content assertion failed: T02 missing product id 9SIQT8TOJO,13641,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,18,0,0
+1780997342654,22,T09_Checkout,200,OK,Online Boutique Users 1-2,text,true,,6932,643,10,10,http://127.0.0.1:8080/cart/checkout,22,0,0
+1780997342739,67,T01_Home,200,OK,Online Boutique Users 1-9,text,true,,10642,235,10,10,http://127.0.0.1:8080/,67,0,0
+1780997343179,30,T01_Home,200,OK,Online Boutique Users 1-7,text,true,,10583,254,10,10,http://127.0.0.1:8080/,29,0,0
+1780997343711,8,T03_Add_To_Cart,302,Found,Online Boutique Users 1-3,,true,,95,375,10,10,http://127.0.0.1:8080/cart,8,0,0
+1780997345186,28,T06_Submit_Review,201,Created,Online Boutique Users 1-8,text,true,,477,578,10,10,http://127.0.0.1:8080/reviews,28,0,0
+1780997345429,25,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-5,text,true,,14136,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,25,0,0
+1780997345625,23,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-6,text,false,Page content assertion failed: T02 missing product id 6E92ZMYYFZ,14247,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,23,0,0
+1780997346561,22,T04_View_Cart,200,OK,Online Boutique Users 1-4,text,true,,18018,258,10,10,http://127.0.0.1:8080/cart,22,0,0
+1780997346586,7,T03_Add_To_Cart,302,Found,Online Boutique Users 1-10,,true,,95,375,10,10,http://127.0.0.1:8080/cart,7,0,0
+1780997347513,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-1,,true,,95,356,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997348205,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-9,text,false,Page content assertion failed: T02 missing product id OLJCESPC7Z,14247,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,22,0,0
+1780997348512,92,T01_Home,200,OK,Online Boutique Users 1-2,text,true,,10583,254,10,10,http://127.0.0.1:8080/,92,0,0
+1780997349002,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-7,text,true,,14126,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,22,0,0
+1780997350419,14,T03_Add_To_Cart,302,Found,Online Boutique Users 1-6,,true,,95,375,10,10,http://127.0.0.1:8080/cart,14,0,0
+1780997350500,20,T04_View_Cart,200,OK,Online Boutique Users 1-3,text,true,,18034,258,10,10,http://127.0.0.1:8080/cart,20,0,0
+1780997351904,10,T07_Verify_Review_Fragment,200,OK,Online Boutique Users 1-8,text,true,,3267,272,10,10,http://127.0.0.1:8080/reviews/66VCHSJNUP,10,0,0
+1780997352041,31,T05_Change_Currency,200,OK,Online Boutique Users 1-4,text,true,,10811,621,10,10,http://127.0.0.1:8080/,7,0,0
+1780997352041,7,T05_Change_Currency-0,302,Found,Online Boutique Users 1-4,,true,,138,367,10,10,http://127.0.0.1:8080/setCurrency,7,0,0
+1780997352049,23,T05_Change_Currency-1,200,OK,Online Boutique Users 1-4,text,true,,10673,254,10,10,http://127.0.0.1:8080/,23,0,0
+1780997352958,13,T03_Add_To_Cart,302,Found,Online Boutique Users 1-5,,true,,95,375,10,10,http://127.0.0.1:8080/cart,13,0,0
+1780997353256,23,T04_View_Cart,200,OK,Online Boutique Users 1-10,text,true,,18043,258,10,10,http://127.0.0.1:8080/cart,23,0,0
+1780997353876,20,T04_View_Cart,200,OK,Online Boutique Users 1-1,text,true,,19414,239,10,10,http://127.0.0.1:8080/cart,20,0,0
+1780997354245,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-9,,true,,95,356,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997355565,10,T03_Add_To_Cart,302,Found,Online Boutique Users 1-7,,true,,95,375,10,10,http://127.0.0.1:8080/cart,10,0,0
+1780997355749,25,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-2,text,true,,12968,272,10,10,http://127.0.0.1:8080/product/1YMWWN1N4O,25,0,0
+1780997356119,27,T04_View_Cart,200,OK,Online Boutique Users 1-6,text,true,,19446,258,10,10,http://127.0.0.1:8080/cart,27,0,0
+1780997357346,22,T01_Home,200,OK,Online Boutique Users 1-3,text,true,,10673,254,10,10,http://127.0.0.1:8080/,22,0,0
+1780997357610,11,T08_Verify_Review_Product_Page,200,OK,Online Boutique Users 1-8,text,true,,14237,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,11,0,0
+1780997358328,28,T01_Home,200,OK,Online Boutique Users 1-4,text,true,,10673,254,10,10,http://127.0.0.1:8080/,27,0,0
+1780997358378,15,T04_View_Cart,200,OK,Online Boutique Users 1-5,text,true,,16605,258,10,10,http://127.0.0.1:8080/cart,15,0,0
+1780997358638,26,T01_Home,200,OK,Online Boutique Users 1-10,text,true,,10673,254,10,10,http://127.0.0.1:8080/,26,0,0
+1780997358681,11,T04_View_Cart,200,OK,Online Boutique Users 1-9,text,true,,18015,239,10,10,http://127.0.0.1:8080/cart,10,0,0
+1780997359591,28,T09_Checkout,200,OK,Online Boutique Users 1-1,text,true,,6880,624,10,10,http://127.0.0.1:8080/cart/checkout,28,0,0
+1780997360808,17,T04_View_Cart,200,OK,Online Boutique Users 1-7,text,true,,16609,258,10,10,http://127.0.0.1:8080/cart,17,0,0
+1780997362302,20,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-3,text,true,,14209,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,20,0,0
+1780997362466,98,T01_Home,200,OK,Online Boutique Users 1-8,text,true,,10673,254,10,10,http://127.0.0.1:8080/,98,0,0
+1780997363173,15,T01_Home,200,OK,Online Boutique Users 1-6,text,true,,10673,254,10,10,http://127.0.0.1:8080/,15,0,0
+1780997363309,7,T03_Add_To_Cart,302,Found,Online Boutique Users 1-2,,true,,95,375,10,10,http://127.0.0.1:8080/cart,7,0,0
+1780997363488,16,T09_Checkout,200,OK,Online Boutique Users 1-5,text,true,,6876,643,10,10,http://127.0.0.1:8080/cart/checkout,16,0,0
+1780997364540,19,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-4,text,false,Page content assertion failed: T02 missing product id 2ZYFJ3GM2N,14219,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,19,0,0
+1780997365285,16,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-10,text,false,Page content assertion failed: T02 missing product id 0PUK6V6EV0,14179,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,16,0,0
+1780997365527,22,T09_Checkout,200,OK,Online Boutique Users 1-7,text,true,,6930,643,10,10,http://127.0.0.1:8080/cart/checkout,22,0,0
+1780997365729,25,T01_Home,200,OK,Online Boutique Users 1-1,text,true,,10553,235,10,10,http://127.0.0.1:8080/,25,0,0
+1780997366346,97,T01_Home,200,OK,Online Boutique Users 1-9,text,true,,10642,235,10,10,http://127.0.0.1:8080/,97,0,0
+1780997367313,8,T03_Add_To_Cart,302,Found,Online Boutique Users 1-3,,true,,95,375,10,10,http://127.0.0.1:8080/cart,8,0,0
+1780997368885,12,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-8,text,false,Page content assertion failed: T02 missing product id 9SIQT8TOJO,14181,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,12,0,0
+1780997369055,10,T04_View_Cart,200,OK,Online Boutique Users 1-2,text,true,,16567,258,10,10,http://127.0.0.1:8080/cart,10,0,0
+1780997369400,28,T01_Home,200,OK,Online Boutique Users 1-5,text,true,,10583,254,10,10,http://127.0.0.1:8080/,28,0,0
+1780997369617,10,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-1,text,true,,14100,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,10,0,0
+1780997369731,7,T03_Add_To_Cart,302,Found,Online Boutique Users 1-10,,true,,95,375,10,10,http://127.0.0.1:8080/cart,7,0,0
+1780997370432,36,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-6,text,false,Page content assertion failed: T02 missing product id LS4PSXUNUM,14193,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,36,0,0
+1780997370652,33,T01_Home,200,OK,Online Boutique Users 1-7,text,true,,10583,254,10,10,http://127.0.0.1:8080/,33,0,0
+1780997371460,6,T03_Add_To_Cart,302,Found,Online Boutique Users 1-4,,true,,95,375,10,10,http://127.0.0.1:8080/cart,6,0,0
+1780997373602,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-9,text,true,,14189,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,22,0,0
+1780997373624,4,T03_Add_To_Cart,302,Found,Online Boutique Users 1-8,,true,,95,375,10,10,http://127.0.0.1:8080/cart,4,0,0
+1780997373998,36,T01_Home,200,OK,Online Boutique Users 1-2,text,true,,10673,254,10,10,http://127.0.0.1:8080/,36,0,2
+1780997374322,32,T04_View_Cart,200,OK,Online Boutique Users 1-3,text,true,,19480,258,10,10,http://127.0.0.1:8080/cart,31,0,3
+1780997374877,22,T04_View_Cart,200,OK,Online Boutique Users 1-10,text,true,,18007,258,10,10,http://127.0.0.1:8080/cart,22,0,0
+1780997375039,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-5,text,true,,14120,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,22,0,2
+1780997375230,25,T04_View_Cart,200,OK,Online Boutique Users 1-4,text,true,,19460,258,10,10,http://127.0.0.1:8080/cart,24,0,2
+1780997375607,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-6,,true,,95,375,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997377467,23,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-7,text,true,,14138,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,23,0,0
+1780997378122,16,T03_Add_To_Cart,302,Found,Online Boutique Users 1-1,,true,,95,356,10,10,http://127.0.0.1:8080/cart,16,0,2
+1780997379598,30,T04_View_Cart,200,OK,Online Boutique Users 1-8,text,true,,18007,258,10,10,http://127.0.0.1:8080/cart,30,0,2
+1780997380283,36,T01_Home,200,OK,Online Boutique Users 1-10,text,true,,10673,254,10,10,http://127.0.0.1:8080/,36,0,0
+1780997380383,31,T04_View_Cart,200,OK,Online Boutique Users 1-6,text,true,,20893,258,10,10,http://127.0.0.1:8080/cart,31,0,1
+1780997380514,13,T03_Add_To_Cart,302,Found,Online Boutique Users 1-9,,true,,95,356,10,10,http://127.0.0.1:8080/cart,13,0,1
+1780997380835,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-2,text,true,,13062,272,10,10,http://127.0.0.1:8080/product/L9ECAV7KIM,22,0,0
+1780997381608,38,T05_Change_Currency,200,OK,Online Boutique Users 1-3,text,true,,10811,621,10,10,http://127.0.0.1:8080/,7,0,0
+1780997381608,7,T05_Change_Currency-0,302,Found,Online Boutique Users 1-3,,true,,138,367,10,10,http://127.0.0.1:8080/setCurrency,7,0,0
+1780997381615,31,T05_Change_Currency-1,200,OK,Online Boutique Users 1-3,text,true,,10673,254,10,10,http://127.0.0.1:8080/,30,0,0
+1780997381638,9,T03_Add_To_Cart,302,Found,Online Boutique Users 1-5,,true,,95,375,10,10,http://127.0.0.1:8080/cart,9,0,0
+1780997382674,19,T03_Add_To_Cart,302,Found,Online Boutique Users 1-7,,true,,95,375,10,10,http://127.0.0.1:8080/cart,19,0,2
+1780997382667,28,T06_Submit_Review,201,Created,Online Boutique Users 1-4,text,true,,477,578,10,10,http://127.0.0.1:8080/reviews,27,0,0
+1780997383849,17,T04_View_Cart,200,OK,Online Boutique Users 1-1,text,true,,16606,239,10,10,http://127.0.0.1:8080/cart,17,0,0
+1780997384550,60,T01_Home,200,OK,Online Boutique Users 1-8,text,true,,10673,254,10,10,http://127.0.0.1:8080/,60,0,0
+1780997384606,16,T01_Home,200,OK,Online Boutique Users 1-6,text,true,,10673,254,10,10,http://127.0.0.1:8080/,15,0,0
+1780997385711,33,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-10,text,false,Page content assertion failed: T02 missing product id 2ZYFJ3GM2N,14181,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,32,0,2
+1780997386602,26,T01_Home,200,OK,Online Boutique Users 1-3,text,true,,10673,254,10,10,http://127.0.0.1:8080/,25,0,0
+1780997386664,10,T03_Add_To_Cart,302,Found,Online Boutique Users 1-2,,true,,95,375,10,10,http://127.0.0.1:8080/cart,10,0,0
+1780997387184,15,T04_View_Cart,200,OK,Online Boutique Users 1-7,text,true,,16601,258,10,10,http://127.0.0.1:8080/cart,14,0,0
+1780997387807,12,T04_View_Cart,200,OK,Online Boutique Users 1-5,text,true,,16567,258,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997387832,13,T04_View_Cart,200,OK,Online Boutique Users 1-9,text,true,,18010,239,10,10,http://127.0.0.1:8080/cart,13,0,0
+1780997388255,9,T07_Verify_Review_Fragment,200,OK,Online Boutique Users 1-4,text,false,"Page content assertion failed: T07 missing review_title, review_user_name, review_content",3267,272,10,10,http://127.0.0.1:8080/reviews/66VCHSJNUP,8,0,0
+1780997389877,23,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-8,text,false,Page content assertion failed: T02 missing product id 0PUK6V6EV0,14231,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,23,0,0
+1780997389912,17,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-6,text,false,Page content assertion failed: T02 missing product id LS4PSXUNUM,14221,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,17,0,0
+1780997390222,23,T04_View_Cart,200,OK,Online Boutique Users 1-2,text,true,,17997,258,10,10,http://127.0.0.1:8080/cart,22,0,0
+1780997390280,90,T05_Change_Currency,200,OK,Online Boutique Users 1-1,text,true,,10811,602,10,10,http://127.0.0.1:8080/,8,0,0
+1780997390280,8,T05_Change_Currency-0,302,Found,Online Boutique Users 1-1,,true,,138,348,10,10,http://127.0.0.1:8080/setCurrency,8,0,0
+1780997390288,82,T05_Change_Currency-1,200,OK,Online Boutique Users 1-1,text,true,,10673,254,10,10,http://127.0.0.1:8080/,82,0,0
+1780997390827,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-10,,true,,95,375,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997390873,19,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-3,text,true,,14221,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,19,0,0
+1780997391807,20,T08_Verify_Review_Product_Page,200,OK,Online Boutique Users 1-4,text,false,"Page content assertion failed: T08 missing review_title, review_user_name, review_content",14181,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,20,0,0
+1780997394171,39,T01_Home,200,OK,Online Boutique Users 1-5,text,true,,10673,254,10,10,http://127.0.0.1:8080/,39,0,0
+1780997394272,32,T01_Home,200,OK,Online Boutique Users 1-7,text,true,,10673,254,10,10,http://127.0.0.1:8080/,32,0,0
+1780997394659,26,T01_Home,200,OK,Online Boutique Users 1-9,text,true,,10642,235,10,10,http://127.0.0.1:8080/,26,0,0
+1780997394973,7,T03_Add_To_Cart,302,Found,Online Boutique Users 1-3,,true,,95,375,10,10,http://127.0.0.1:8080/cart,7,0,0
+1780997395421,10,T03_Add_To_Cart,302,Found,Online Boutique Users 1-8,,true,,95,375,10,10,http://127.0.0.1:8080/cart,10,0,0
+1780997395690,29,T09_Checkout,200,OK,Online Boutique Users 1-4,text,true,,6935,643,10,10,http://127.0.0.1:8080/cart/checkout,29,0,0
+1780997395713,21,T06_Submit_Review,201,Created,Online Boutique Users 1-1,text,true,,477,578,10,10,http://127.0.0.1:8080/reviews,21,0,0
+1780997396205,25,T04_View_Cart,200,OK,Online Boutique Users 1-10,text,true,,19431,258,10,10,http://127.0.0.1:8080/cart,25,0,0
+1780997396532,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-6,,true,,95,375,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997396640,30,T05_Change_Currency,200,OK,Online Boutique Users 1-2,text,true,,10811,621,10,10,http://127.0.0.1:8080/,7,0,0
+1780997396640,7,T05_Change_Currency-0,302,Found,Online Boutique Users 1-2,,true,,138,367,10,10,http://127.0.0.1:8080/setCurrency,7,0,0
+1780997396647,23,T05_Change_Currency-1,200,OK,Online Boutique Users 1-2,text,true,,10673,254,10,10,http://127.0.0.1:8080/,23,0,0
+1780997400397,23,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-5,text,false,Page content assertion failed: T02 missing product id OLJCESPC7Z,14239,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,23,0,0
+1780997400736,24,T04_View_Cart,200,OK,Online Boutique Users 1-8,text,true,,19427,258,10,10,http://127.0.0.1:8080/cart,24,0,0
+1780997400996,61,T01_Home,200,OK,Online Boutique Users 1-4,text,true,,10583,254,10,10,http://127.0.0.1:8080/,61,0,0
+1780997401157,21,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-9,text,true,,14223,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,21,0,0
+1780997401352,22,T04_View_Cart,200,OK,Online Boutique Users 1-3,text,true,,20884,258,10,10,http://127.0.0.1:8080/cart,22,0,0
+1780997401448,14,T04_View_Cart,200,OK,Online Boutique Users 1-6,text,true,,20891,258,10,10,http://127.0.0.1:8080/cart,14,0,0
+1780997401806,24,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-7,text,false,Page content assertion failed: T02 missing product id 6E92ZMYYFZ,14221,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,24,0,0
+1780997402202,22,T01_Home,200,OK,Online Boutique Users 1-10,text,true,,10673,254,10,10,http://127.0.0.1:8080/,22,0,0
+1780997402297,11,T07_Verify_Review_Fragment,200,OK,Online Boutique Users 1-1,text,false,"Page content assertion failed: T07 missing review_title, review_user_name, review_content",3267,272,10,10,http://127.0.0.1:8080/reviews/66VCHSJNUP,11,0,0
+1780997403624,32,T01_Home,200,OK,Online Boutique Users 1-2,text,true,,10673,254,10,10,http://127.0.0.1:8080/,32,0,0
+1780997406231,10,T03_Add_To_Cart,302,Found,Online Boutique Users 1-5,,true,,95,375,10,10,http://127.0.0.1:8080/cart,10,0,0
+1780997406485,28,T09_Checkout,200,OK,Online Boutique Users 1-3,text,true,,6895,643,10,10,http://127.0.0.1:8080/cart/checkout,28,0,0
+1780997406944,7,T03_Add_To_Cart,302,Found,Online Boutique Users 1-9,,true,,95,356,10,10,http://127.0.0.1:8080/cart,7,0,0
+1780997407197,8,T03_Add_To_Cart,302,Found,Online Boutique Users 1-7,,true,,95,375,10,10,http://127.0.0.1:8080/cart,8,0,0
+1780997407345,33,T06_Submit_Review,201,Created,Online Boutique Users 1-6,text,true,,477,578,10,10,http://127.0.0.1:8080/reviews,33,0,0
+1780997407508,16,T09_Checkout,200,OK,Online Boutique Users 1-8,text,true,,6908,643,10,10,http://127.0.0.1:8080/cart/checkout,16,0,0
+1780997407658,26,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-4,text,false,Page content assertion failed: T02 missing product id 1YMWWN1N4O,14124,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,26,0,0
+1780997408127,11,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-10,text,true,,14251,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,11,0,0
+1780997408985,12,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-2,text,true,,11946,272,10,10,http://127.0.0.1:8080/product/2ZYFJ3GM2N,12,0,0
+1780997409078,13,T08_Verify_Review_Product_Page,200,OK,Online Boutique Users 1-1,text,false,"Page content assertion failed: T08 missing review_title, review_user_name, review_content",14185,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,13,0,0
+1780997411542,13,T04_View_Cart,200,OK,Online Boutique Users 1-9,text,true,,19415,239,10,10,http://127.0.0.1:8080/cart,13,0,0
+1780997412232,15,T04_View_Cart,200,OK,Online Boutique Users 1-7,text,true,,17998,258,10,10,http://127.0.0.1:8080/cart,15,0,0
+1780997412446,25,T04_View_Cart,200,OK,Online Boutique Users 1-5,text,true,,18008,258,10,10,http://127.0.0.1:8080/cart,25,0,0
+1780997412973,70,T01_Home,200,OK,Online Boutique Users 1-8,text,true,,10583,254,10,10,http://127.0.0.1:8080/,70,0,0
+1780997413246,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-4,,true,,95,375,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997414075,6,T03_Add_To_Cart,302,Found,Online Boutique Users 1-10,,true,,95,375,10,10,http://127.0.0.1:8080/cart,6,0,0
+1780997414238,23,T01_Home,200,OK,Online Boutique Users 1-3,text,true,,10583,254,10,10,http://127.0.0.1:8080/,23,0,0
+1780997414630,9,T03_Add_To_Cart,302,Found,Online Boutique Users 1-2,,true,,95,375,10,10,http://127.0.0.1:8080/cart,9,0,0
+1780997414792,9,T07_Verify_Review_Fragment,200,OK,Online Boutique Users 1-6,text,false,"Page content assertion failed: T07 missing review_title, review_content",3267,272,10,10,http://127.0.0.1:8080/reviews/66VCHSJNUP,9,0,0
+1780997415487,23,T09_Checkout,200,OK,Online Boutique Users 1-1,text,true,,6894,643,10,10,http://127.0.0.1:8080/cart/checkout,23,0,0
+1780997417419,18,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-8,text,true,,14154,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,18,0,0
+1780997417682,16,T01_Home,200,OK,Online Boutique Users 1-9,text,true,,10642,235,10,10,http://127.0.0.1:8080/,16,0,0
+1780997418582,16,T04_View_Cart,200,OK,Online Boutique Users 1-10,text,true,,20900,258,10,10,http://127.0.0.1:8080/cart,15,0,0
+1780997419095,60,T01_Home,200,OK,Online Boutique Users 1-5,text,true,,10673,254,10,10,http://127.0.0.1:8080/,60,0,0
+1780997419199,16,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-3,text,true,,14112,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,16,0,0
+1780997419436,11,T04_View_Cart,200,OK,Online Boutique Users 1-4,text,true,,16577,258,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997420503,29,T05_Change_Currency,200,OK,Online Boutique Users 1-7,text,true,,10811,621,10,10,http://127.0.0.1:8080/,7,0,0
+1780997420503,7,T05_Change_Currency-0,302,Found,Online Boutique Users 1-7,,true,,138,367,10,10,http://127.0.0.1:8080/setCurrency,7,0,0
+1780997420510,22,T05_Change_Currency-1,200,OK,Online Boutique Users 1-7,text,true,,10673,254,10,10,http://127.0.0.1:8080/,22,0,0
+1780997420585,22,T04_View_Cart,200,OK,Online Boutique Users 1-2,text,true,,19459,258,10,10,http://127.0.0.1:8080/cart,22,0,0
+1780997421421,13,T08_Verify_Review_Product_Page,200,OK,Online Boutique Users 1-6,text,false,"Page content assertion failed: T08 missing review_title, review_content",14237,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,13,0,0
+1780997422377,26,T01_Home,200,OK,Online Boutique Users 1-1,text,true,,10583,254,10,10,http://127.0.0.1:8080/,26,0,0
+1780997423636,13,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-9,text,false,Page content assertion failed: T02 missing product id 9SIQT8TOJO,14223,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,12,0,0
+1780997423852,14,T03_Add_To_Cart,302,Found,Online Boutique Users 1-3,,true,,95,375,10,10,http://127.0.0.1:8080/cart,14,0,0
+1780997424013,15,T03_Add_To_Cart,302,Found,Online Boutique Users 1-8,,true,,95,375,10,10,http://127.0.0.1:8080/cart,15,0,0
+1780997424055,13,T01_Home,200,OK,Online Boutique Users 1-4,text,true,,10673,254,10,10,http://127.0.0.1:8080/,13,0,0
+1780997424248,30,T09_Checkout,200,OK,Online Boutique Users 1-10,text,true,,6899,643,10,10,http://127.0.0.1:8080/cart/checkout,30,0,0
+1780997425433,18,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-5,text,false,Page content assertion failed: T02 missing product id 6E92ZMYYFZ,14199,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,18,0,0
+1780997426104,17,T05_Change_Currency,200,OK,Online Boutique Users 1-2,text,true,,10811,621,10,10,http://127.0.0.1:8080/,4,0,0
+1780997426104,4,T05_Change_Currency-0,302,Found,Online Boutique Users 1-2,,true,,138,367,10,10,http://127.0.0.1:8080/setCurrency,4,0,0
+1780997426108,13,T05_Change_Currency-1,200,OK,Online Boutique Users 1-2,text,true,,10673,254,10,10,http://127.0.0.1:8080/,13,0,0
+1780997427006,17,T01_Home,200,OK,Online Boutique Users 1-6,text,true,,10673,254,10,10,http://127.0.0.1:8080/,17,0,0
+1780997427921,29,T01_Home,200,OK,Online Boutique Users 1-7,text,true,,10673,254,10,10,http://127.0.0.1:8080/,29,0,0
+1780997427974,13,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-1,text,false,Page content assertion failed: T02 missing product id OLJCESPC7Z,14158,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,13,0,0
+1780997428350,21,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-4,text,true,,14213,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,21,0,0
+1780997429432,14,T03_Add_To_Cart,302,Found,Online Boutique Users 1-9,,true,,95,356,10,10,http://127.0.0.1:8080/cart,14,0,0
+1780997430092,14,T04_View_Cart,200,OK,Online Boutique Users 1-3,text,true,,16553,258,10,10,http://127.0.0.1:8080/cart,14,0,0
+1780997430927,82,T01_Home,200,OK,Online Boutique Users 1-10,text,true,,10583,254,10,10,http://127.0.0.1:8080/,82,0,0
+1780997431702,9,T03_Add_To_Cart,302,Found,Online Boutique Users 1-5,,true,,95,375,10,10,http://127.0.0.1:8080/cart,9,0,0
+1780997431802,13,T04_View_Cart,200,OK,Online Boutique Users 1-8,text,true,,16607,258,10,10,http://127.0.0.1:8080/cart,13,0,0
+1780997432022,16,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-6,text,false,Page content assertion failed: T02 missing product id L9ECAV7KIM,14221,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,16,0,0
+1780997434016,35,T09_Checkout,200,OK,Online Boutique Users 1-2,text,true,,6881,643,10,10,http://127.0.0.1:8080/cart/checkout,35,0,2
+1780997434393,20,T04_View_Cart,200,OK,Online Boutique Users 1-9,text,true,,20862,239,10,10,http://127.0.0.1:8080/cart,20,0,0
+1780997434784,13,T03_Add_To_Cart,302,Found,Online Boutique Users 1-4,,true,,95,375,10,10,http://127.0.0.1:8080/cart,13,0,0
+1780997435178,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-1,,true,,95,375,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997435516,20,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-7,text,false,Page content assertion failed: T02 missing product id 1YMWWN1N4O,14237,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,20,0,0
+1780997436319,75,T01_Home,200,OK,Online Boutique Users 1-3,text,true,,10673,254,10,10,http://127.0.0.1:8080/,75,0,2
+1780997437766,13,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-10,text,true,,14102,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,13,0,0
+1780997438104,32,T05_Change_Currency,200,OK,Online Boutique Users 1-8,text,true,,10811,621,10,10,http://127.0.0.1:8080/,7,0,0
+1780997438104,7,T05_Change_Currency-0,302,Found,Online Boutique Users 1-8,,true,,138,367,10,10,http://127.0.0.1:8080/setCurrency,7,0,0
+1780997438112,24,T05_Change_Currency-1,200,OK,Online Boutique Users 1-8,text,true,,10673,254,10,10,http://127.0.0.1:8080/,24,0,0
+1780997438343,6,T03_Add_To_Cart,302,Found,Online Boutique Users 1-6,,true,,95,375,10,10,http://127.0.0.1:8080/cart,6,0,0
+1780997438354,13,T01_Home,200,OK,Online Boutique Users 1-2,text,true,,10583,254,10,10,http://127.0.0.1:8080/,13,0,0
+1780997438484,30,T04_View_Cart,200,OK,Online Boutique Users 1-5,text,true,,19432,258,10,10,http://127.0.0.1:8080/cart,30,0,2
+1780997440540,48,T06_Submit_Review,201,Created,Online Boutique Users 1-9,text,true,,477,559,10,10,http://127.0.0.1:8080/reviews,48,0,2
+1780997440649,28,T04_View_Cart,200,OK,Online Boutique Users 1-4,text,true,,18010,258,10,10,http://127.0.0.1:8080/cart,28,0,2
+1780997440657,22,T04_View_Cart,200,OK,Online Boutique Users 1-1,text,true,,16569,258,10,10,http://127.0.0.1:8080/cart,22,0,2
+1780997441595,13,T03_Add_To_Cart,302,Found,Online Boutique Users 1-7,,true,,95,375,10,10,http://127.0.0.1:8080/cart,13,0,0
+1780997442419,21,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-3,text,true,,14199,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,21,0,0
+1780997442907,30,T01_Home,200,OK,Online Boutique Users 1-8,text,true,,10673,254,10,10,http://127.0.0.1:8080/,30,0,1
+1780997443876,26,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-2,text,true,,12414,272,10,10,http://127.0.0.1:8080/product/LS4PSXUNUM,26,0,0
+1780997444172,33,T04_View_Cart,200,OK,Online Boutique Users 1-6,text,true,,22327,258,10,10,http://127.0.0.1:8080/cart,33,0,2
+1780997444680,30,T01_Home,200,OK,Online Boutique Users 1-5,text,true,,10673,254,10,10,http://127.0.0.1:8080/,30,0,0
+1780997444953,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-10,,true,,95,375,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997446560,26,T04_View_Cart,200,OK,Online Boutique Users 1-7,text,true,,18020,258,10,10,http://127.0.0.1:8080/cart,26,0,2
+1780997446649,10,T07_Verify_Review_Fragment,200,OK,Online Boutique Users 1-9,text,false,"Page content assertion failed: T07 missing review_title, review_user_name, review_content",3267,253,10,10,http://127.0.0.1:8080/reviews/66VCHSJNUP,10,0,0
+1780997447168,9,T03_Add_To_Cart,302,Found,Online Boutique Users 1-3,,true,,95,375,10,10,http://127.0.0.1:8080/cart,9,0,0
+1780997447283,101,T05_Change_Currency,200,OK,Online Boutique Users 1-4,text,true,,10811,621,10,10,http://127.0.0.1:8080/,6,0,0
+1780997447283,6,T05_Change_Currency-0,302,Found,Online Boutique Users 1-4,,true,,138,367,10,10,http://127.0.0.1:8080/setCurrency,6,0,0
+1780997447289,95,T05_Change_Currency-1,200,OK,Online Boutique Users 1-4,text,true,,10673,254,10,10,http://127.0.0.1:8080/,95,0,0
+1780997447562,21,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-8,text,true,,14209,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,20,0,0
+1780997447996,26,T09_Checkout,200,OK,Online Boutique Users 1-1,text,true,,6904,643,10,10,http://127.0.0.1:8080/cart/checkout,26,0,0
+1780997449571,22,T01_Home,200,OK,Online Boutique Users 1-6,text,true,,10673,254,10,10,http://127.0.0.1:8080/,22,0,0
+1780997450203,29,T04_View_Cart,200,OK,Online Boutique Users 1-10,text,true,,16589,258,10,10,http://127.0.0.1:8080/cart,29,0,1
+1780997450831,9,T03_Add_To_Cart,302,Found,Online Boutique Users 1-2,,true,,95,375,10,10,http://127.0.0.1:8080/cart,9,0,0
+1780997451547,18,T01_Home,200,OK,Online Boutique Users 1-7,text,true,,10673,254,10,10,http://127.0.0.1:8080/,18,0,0
+1780997451750,18,T08_Verify_Review_Product_Page,200,OK,Online Boutique Users 1-9,text,false,"Page content assertion failed: T08 missing review_title, review_user_name, review_content",14239,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,18,0,0
+1780997451787,20,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-5,text,true,,14235,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,20,0,0
+1780997453215,31,T01_Home,200,OK,Online Boutique Users 1-4,text,true,,10673,254,10,10,http://127.0.0.1:8080/,31,0,0
+1780997453373,20,T04_View_Cart,200,OK,Online Boutique Users 1-3,text,false,Page content assertion failed: T04 missing Quantity: 1,16617,258,10,10,http://127.0.0.1:8080/cart,20,0,0
+1780997453679,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-8,,true,,95,375,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997453979,29,T01_Home,200,OK,Online Boutique Users 1-1,text,true,,10583,254,10,10,http://127.0.0.1:8080/,29,0,0
+1780997455101,16,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-6,text,true,,14205,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,15,0,0
+1780997455903,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-5,,true,,95,375,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997456135,27,T09_Checkout,200,OK,Online Boutique Users 1-10,text,true,,6912,643,10,10,http://127.0.0.1:8080/cart/checkout,27,0,0
+1780997456526,19,T09_Checkout,200,OK,Online Boutique Users 1-9,text,true,,6923,624,10,10,http://127.0.0.1:8080/cart/checkout,19,0,0
+1780997456800,22,T04_View_Cart,200,OK,Online Boutique Users 1-2,text,true,,16587,258,10,10,http://127.0.0.1:8080/cart,22,0,0
+1780997458062,24,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-7,text,true,,14255,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,23,0,0
+1780997460707,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-1,text,true,,14120,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,22,0,0
+1780997460810,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-4,text,true,,14211,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,22,0,0
+1780997460995,29,T01_Home,200,OK,Online Boutique Users 1-3,text,true,,10673,254,10,10,http://127.0.0.1:8080/,29,0,0
+1780997461534,20,T04_View_Cart,200,OK,Online Boutique Users 1-8,text,true,,18039,258,10,10,http://127.0.0.1:8080/cart,20,0,0
+1780997462408,10,T03_Add_To_Cart,302,Found,Online Boutique Users 1-6,,true,,95,375,10,10,http://127.0.0.1:8080/cart,10,0,0
+1780997462486,24,T04_View_Cart,200,OK,Online Boutique Users 1-5,text,true,,19448,258,10,10,http://127.0.0.1:8080/cart,24,0,0
+1780997462678,23,T01_Home,200,OK,Online Boutique Users 1-10,text,true,,10583,254,10,10,http://127.0.0.1:8080/,23,0,0
+1780997462850,32,T05_Change_Currency,200,OK,Online Boutique Users 1-2,text,true,,10811,621,10,10,http://127.0.0.1:8080/,6,0,0
+1780997462850,6,T05_Change_Currency-0,302,Found,Online Boutique Users 1-2,,true,,138,367,10,10,http://127.0.0.1:8080/setCurrency,6,0,0
+1780997462856,26,T05_Change_Currency-1,200,OK,Online Boutique Users 1-2,text,true,,10673,254,10,10,http://127.0.0.1:8080/,26,0,0
+1780997463305,29,T01_Home,200,OK,Online Boutique Users 1-9,text,true,,10553,235,10,10,http://127.0.0.1:8080/,29,0,0
+1780997463819,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-7,,true,,95,375,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997464791,9,T03_Add_To_Cart,302,Found,Online Boutique Users 1-1,,true,,95,375,10,10,http://127.0.0.1:8080/cart,9,0,0
+1780997467376,33,T01_Home,200,OK,Online Boutique Users 1-5,text,true,,10673,254,10,10,http://127.0.0.1:8080/,32,0,0
+1780997467528,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-4,,true,,95,375,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997467768,11,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-3,text,true,,14235,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,11,0,0
+1780997468186,29,T01_Home,200,OK,Online Boutique Users 1-8,text,true,,10673,254,10,10,http://127.0.0.1:8080/,28,0,0
+1780997469142,23,T04_View_Cart,200,OK,Online Boutique Users 1-7,text,true,,19462,258,10,10,http://127.0.0.1:8080/cart,23,0,0
+1780997469188,15,T04_View_Cart,200,OK,Online Boutique Users 1-1,text,true,,16597,258,10,10,http://127.0.0.1:8080/cart,15,0,0
+1780997469343,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-9,text,false,Page content assertion failed: T02 missing product id LS4PSXUNUM,14100,253,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,22,0,0
+1780997469933,28,T04_View_Cart,200,OK,Online Boutique Users 1-6,text,true,,23384,258,10,10,http://127.0.0.1:8080/cart,28,0,0
+1780997470789,28,T01_Home,200,OK,Online Boutique Users 1-2,text,true,,10673,254,10,10,http://127.0.0.1:8080/,27,0,0
+1780997470975,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-10,text,true,,14140,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,22,0,0
+1780997472859,22,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-5,text,false,Page content assertion failed: T02 missing product id 6E92ZMYYFZ,14219,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,22,0,0
+1780997473637,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-3,,true,,95,375,10,10,http://127.0.0.1:8080/cart,12,0,0
+1780997474452,31,T01_Home,200,OK,Online Boutique Users 1-1,text,true,,10673,254,10,10,http://127.0.0.1:8080/,31,0,0
+1780997475066,21,T04_View_Cart,200,OK,Online Boutique Users 1-4,text,true,,18010,258,10,10,http://127.0.0.1:8080/cart,21,0,0
+1780997475409,92,T01_Home,200,OK,Online Boutique Users 1-6,text,true,,10673,254,10,10,http://127.0.0.1:8080/,92,0,0
+1780997475703,29,T01_Home,200,OK,Online Boutique Users 1-7,text,true,,10673,254,10,10,http://127.0.0.1:8080/,29,0,0
+1780997475745,14,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-8,text,false,Page content assertion failed: T02 missing product id 9SIQT8TOJO,14239,272,10,10,http://127.0.0.1:8080/product/66VCHSJNUP,14,0,0
+1780997476192,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-9,,true,,95,356,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997476672,23,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-2,text,true,,13920,272,10,10,http://127.0.0.1:8080/product/OLJCESPC7Z,23,0,0
+1780997477328,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-10,,true,,95,375,10,10,http://127.0.0.1:8080/cart,11,0,0
+1780997478900,21,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-1,text,true,,14193,272,9,9,http://127.0.0.1:8080/product/66VCHSJNUP,20,0,0
+1780997479040,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-5,,true,,95,375,8,8,http://127.0.0.1:8080/cart,12,0,0
+1780997479988,23,T04_View_Cart,200,OK,Online Boutique Users 1-3,text,true,,17984,258,8,8,http://127.0.0.1:8080/cart,23,0,0
+1780997480042,20,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-6,text,false,Page content assertion failed: T02 missing product id L9ECAV7KIM,14235,272,7,7,http://127.0.0.1:8080/product/66VCHSJNUP,19,0,0
+1780997480091,26,T09_Checkout,200,OK,Online Boutique Users 1-4,text,true,,6877,643,6,6,http://127.0.0.1:8080/cart/checkout,26,0,0
+1780997482087,11,T03_Add_To_Cart,302,Found,Online Boutique Users 1-8,,true,,95,375,5,5,http://127.0.0.1:8080/cart,11,0,0
+1780997482821,23,T04_View_Cart,200,OK,Online Boutique Users 1-9,text,true,,16586,239,4,4,http://127.0.0.1:8080/cart,23,0,0
+1780997482962,23,T02_Product_Detail_With_Reviews,200,OK,Online Boutique Users 1-7,text,true,,14255,272,3,3,http://127.0.0.1:8080/product/66VCHSJNUP,23,0,0
+1780997483195,22,T04_View_Cart,200,OK,Online Boutique Users 1-5,text,true,,19420,258,2,2,http://127.0.0.1:8080/cart,22,0,0
+1780997483552,12,T03_Add_To_Cart,302,Found,Online Boutique Users 1-2,,true,,95,375,1,1,http://127.0.0.1:8080/cart,12,0,0
